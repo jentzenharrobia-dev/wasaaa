@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practica1</title>
+</head>
+
+
+<style>
+     *{
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        text-decoration: none;
+        box-sizing: border-box;
+    }
+
+        body{
+        width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top:0;}
+
+        
+
+
+section.PrimerModulo{
+    height: 400px;
+    width:800px ;
+    border: 3px;
+    background-image: url(images/88de642d57a158c7f1b6753f195c3b26.webp);
+    background-size: 100% 100%;
+    transition: background-image 1s;
+}
+
+section.PrimerModulo:active{
+    background-image: url(images/bertin-osborne-16-9-aspect-ratio-default-1013583_da39.webp);
+
+}
+
+
+section.SegundoModulo{
+    height: 400px;
+    width:800px ;
+    border: 3px;
+    background-color: green;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+section.SegundoModulo article{
+    height: 90%;
+    width: 30%;
+    background-color: beige;
+    border: 1px;
+    border-color: black;
+}
+
+section.SegundoModulo article#CA{
+    background-image: url(images/cars\ 3.webp);
+    background-size: 100% 100%;
+    transition: background-size 1s;
+}
+
+section.SegundoModulo article#CA:active{
+    background-position: center;
+    background-size: 120% 120%;
+    }
+
+section.SegundoModulo article#CB{
+    background-image: url(images/frieren.webp);
+    background-size: 100% 100%;
+    transition: width 1s, height 1s;
+    ;
+}
+        
+
+section.SegundoModulo article#CB:active{
+    height: 95%;
+    width: 35%;
+}
+
+section.SegundoModulo article#CC{
+    background-image: url(images/tanya.webp);
+    background-size: 100% 100%;    
+    transition: opacity 1s;
+}
+
+section.SegundoModulo article#CC:active{
+   opacity: 0.1;
+}
+
+
+
+section.TercerModulo{
+    height: 400px;
+    width:800px ;
+    border: 3px;
+    background-color: lightcoral;
+    align-items: center;
+    justify-content: space-evenly;
+    display: flex;
+}
+
+section.TercerModulo article#CajaHuevos{
+    height: 300px;
+    width: 620px;
+    background-color: green;
+    align-items: first baseline;
+    justify-content: space-evenly;
+    display: flex;
+}
+
+section.TercerModulo article#CajaHuevos div#PanelSaliente{
+    width: 100%;
+    height: 0%;
+    background-color: aliceblue;
+    border-radius: 0px 0px 20px 20px;
+    transition: height 2s;
+}
+
+section.TercerModulo article#CajaHuevos:active div#PanelSaliente{
+    height: 70%;
+}
+
+
+
+section.CuartoModulo{
+    height: 400px;
+    width:800px ;
+    border: 3px;
+    background-color: yellow;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    display: flex;
+    flex-direction: column;
+}
+
+
+section.CuartoModulo article#Camello1{
+    height: 30%;
+    width: 20%;
+    margin-left: 20px;
+    background-color: aliceblue;
+    background-image: url(images/gon.webp);
+    background-size: 100% 100%;
+    transform: translate(0px, 0px);
+    transition: transform 3s;
+}
+
+section.CuartoModulo:active article#Camello1{
+    transform: translate(600px, 0px);
+    background-color: aqua;
+    
+}
+
+section.CuartoModulo article#Camello2{
+    height: 30%;
+    width: 20%;
+    margin-left: 20px;
+    background-color: aliceblue;
+    background-image: url(images/hisoka.jpg);
+    background-size: 100% 100%;
+    transition: transform 4s;
+}
+
+section.CuartoModulo:active article#Camello2{
+        transform: translate(600px, 0px);
+    background-color: aqua;
+}
+
+section.CuartoModulo article#Camello3{
+    height: 30%;
+    width: 20%;
+    margin-left: 20px;
+    background-color: aliceblue;
+    background-image: url(images/killua.webp);
+    background-size: 100% 100%;
+    transform: translate(700px 0px);
+    transition: transform 2s;
+    transition: background-image 1s 2s;
+}
+
+section.CuartoModulo:active article#Camello3{
+    transform: translate(600px, 0px);
+    background-color: aqua;
+}
+
+section.CuartoModulo:active article#Camello3{
+    background-image: url(images/peluche\ killua.jpg);
+    transition-delay: background-image 2.3s;
+}
+
+
+
+section.QuintoModulo{
+    height: 400px;
+    width:800px ;
+    border: 3px;
+    background-image: url(images/88de642d57a158c7f1b6753f195c3b26.webp);
+    background-size: 100% 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    overflow: hidden;
+}
+
+section.QuintoModulo article#telon1{
+    height: 100%;
+    width: 50%;
+    background-color: lightblue;
+    transition: transform 2s;
+    transform: translate(-400px, 0px);
+}
+section.QuintoModulo:active article#telon1{
+        transform: translate(0px , 0px);
+    }
+
+section.QuintoModulo article#telon2{
+    height: 100%;
+    width: 50%;
+    background-color: lightblue;
+    transition: transform 2s;
+    transform: translate(400px, 0px);
+}
+section.QuintoModulo:active article#telon2{
+        transform: translate(0px , 0px);
+    }
+
+
+
+section.SextoModulo{
+    height: 600px;
+    width: 800px ;
+    border: 3px;
+    background-color:lightgreen;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+
+}
+
+section.SextoModulo *{ 
+        transform: translate(0px,-120px);
+}
+
+
+
+section.SextoModulo article.cartel1 {
+    height: 50%;
+    width: 20%;
+    background-color: brown;
+    background-image: url(images/tanya\ blanco\ y\ negro.png);
+    background-size: 100% 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    transition: background-image 1s;
+}
+
+section.SextoModulo article.cartel1:hover{
+    background-image: url(images/tanya.webp);
+}
+
+section.SextoModulo article.cartel2 {
+    height: 50%;
+    width: 20%;
+    background-color: brown;
+    background-image: url(images/Cars\ Blanco\ y\ negro.png);
+    background-size: 100% 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    transition: background-image 1s;
+}
+
+section.SextoModulo article.cartel2:hover {
+    background-image: url(images/cars\ 3.webp);
+}
+
+section.SextoModulo article.cartel3 {
+    height: 50%;
+    width: 20%;
+    background-color: brown;
+    background-image: url(images/Frieren\ blanco\ y\ negro.png);
+    background-size: 100% 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    transition: background-image 1s;
+}
+
+section.SextoModulo article.cartel3:hover {
+    background-image: url(images/frieren.webp);
+}
+
+section.SextoModulo article.cartel4 {
+    height: 50%;
+    width: 20%;
+    background-color: brown;
+    background-image: url(images/Nemo\ Blanco\ y\ negro.png);
+    background-size: 100% 100%;   
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    transition: background-image 1s;
+}
+
+section.SextoModulo article.cartel4:hover {
+    background-image: url(images/nemo.webp);
+}
+
+section.SextoModulo article *{
+    transform: translate(0px,0px);
+
+}
+
+section.SextoModulo article.cartel1 div#textocartel1{
+    height: 100%;
+    width: 0%;
+    background-color: white;
+    transform: translate(-120px , 0px);
+    transition: width 1.5s;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    overflow: hidden;
+    text-align: justify;
+    flex-direction: column;
+    
+}
+
+section.SextoModulo article.cartel1:hover div#textocartel1{
+    width: 100%;
+}
+
+section.SextoModulo article.cartel2 div#textocartel2{
+    height: 100%;
+    width: 0%;
+    background-color: white;
+    transform: translate(-120px , 0px);
+    transition: width 1.5s;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    overflow: hidden;
+    text-align: justify;
+    flex-direction: column;
+
+}
+
+section.SextoModulo article.cartel2:hover div#textocartel2{
+    width: 100%;
+}
+
+section.SextoModulo article.cartel3 div#textocartel3{
+    height: 100%;
+    width: 0%;
+    background-color: white;
+    transform: translate(-120px , 0px);
+    transition: width 1.5s;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    overflow: hidden;
+    text-align: justify;
+    flex-direction: column;
+
+}
+
+section.SextoModulo article.cartel3:hover div#textocartel3{
+    width: 100%;
+}
+
+section.SextoModulo article.cartel4 div#textocartel4{
+    height: 100%;
+    width: 0%;
+    background-color: white;
+    transform: translate(-120px , 0px);
+    transition: width 1.5s;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    overflow: hidden;
+    text-align: justify;
+    flex-direction: column;
+
+
+}
+
+section.SextoModulo article.cartel4:hover div#textocartel4{
+    width: 100%;
+}
+
+#boton{
+    text-align: center;
+    height: 35px;
+    width: auto;
+    background-color: aqua;
+}
+
+
+section.SeptimoModulo{
+    height: 600px;
+    width: 800px;
+    background-color: bisque;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: row;
+}
+
+article.cajaformas1{
+    height: 600px;
+    width: 200px;
+    background-color: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    transform: translate(-345px ,-200px);
+}
+
+article.cajaformas1 div#triangulo1{
+    height: 200px;
+    width:  200px;
+    background-image: url(images/Triangulo.webp);
+    background-size: 100% 100%;
+    transform: translate(0,0);
+    transition: transform 2s;
+}
+
+article.botonunir:active article.cajaformas1 div#triangulo1{
+    transform: translate(590px , 400px);
+}
+
+article.cajaformas1 div#circulo1{
+    height: 200px;
+    width:  200px;
+    background-image: url(images/circulo.png);
+    background-size: 100% 100%;
+    transform: translate(0,0);
+    transition: transform 2s;
+}
+
+article.botonunir:active article.cajaformas1 div#circulo1{
+    transform: translate(590px , -200px);
+}
+
+article.cajaformas1 div#equis1{
+    height: 200px;
+    width:  200px;
+    background-image: url(images/equis.png);
+    background-size: 100% 100%;
+    transform: translate(0,0);
+    transition: transform 2s;
+}
+
+article.botonunir:active article.cajaformas1 div#equis1{
+    transform: translate(590px , -200px);
+}
+
+article.cajaformas2{
+    height: 600px;
+    width: 200px;
+    background-color: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    transform: translate(45px ,-200px);
+}
+
+article.cajaformas2 div#triangulo2{
+    height: 200px;
+    width:  200px;
+    background-image: url(images/Triangulo.webp);
+    background-size: 100% 100%;
+    transform: translate(0,0);
+    transition: transform 2s;
+}
+
+article.cajaformas2 div#circulo2{
+    height: 200px;
+    width:  200px;
+    background-image: url(images/circulo.png);
+    background-size: 100% 100%;
+    transform: translate(0,0);
+    transition: transform 2s;
+}
+
+article.cajaformas2 div#equis2{
+    height: 200px;
+    width:  200px;
+    background-image: url(images/equis.png);
+    background-size: 100% 100%;
+    transform: translate(0,0);
+    transition: transform 2s;
+}
+
+article.botonunir{
+    height: 50px;
+    width: 100px;
+    background-color: black;
+    transform: translate(-0,200px);
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+
+}
+ 
+
+section.OctavoModulo{
+    height: 600px;
+    width: 800px;
+    background-color: beige;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+
+section.OctavoModulo article.personaje1{
+    height: 100px;
+    width: 380px;
+    background-color: aqua;
+    transform: translate(150px, 0px);
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    text-align: center;
+}
+
+section.OctavoModulo article.personaje1:hover div#Foto1{
+    height: 300px;
+    width: 200px;
+    background-image: url(images/killua2.jpg);
+    background-size: 100% 100%;
+    transform: translate(-500px ,200px );
+}
+
+section.OctavoModulo article.personaje2{
+    height: 100px;
+    width: 380px;
+    background-color: aqua;
+    transform: translate(150px, 0px);
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    text-align: center;
+}
+
+section.OctavoModulo article.personaje2:hover div#Foto2{
+    height: 300px;
+    width: 200px;
+    background-image: url(images/gon\ 2.jfif);
+    background-size: 100% 100%;
+    transform: translate(-500px ,25px );
+}
+
+section.OctavoModulo article.personaje3{
+    height: 100px;
+    width: 380px;
+    background-color: aqua;
+    transform: translate(150px, 0px);
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    text-align: center;
+    opacity: 1;
+}
+
+section.OctavoModulo article.personaje3:hover div#Foto3{
+    height: 300px;
+    width: 200px;
+    background-image: url(images/hisoka\ 2.webp);
+    background-size: 100% 100%;
+    transform: translate(-500px ,-150px );
+    opacity: 0;
+    transition: opacity 2s;
+}
+
+
+</style>
+
+
+<body>
+    <section class="PrimerModulo"></section>
+
+    <section class="SegundoModulo">
+        <article id="CA"></article>
+        <article id="CB"></article>
+        <article id="CC"></article>
+    </section>
+
+    <section class="TercerModulo">
+        <article id="CajaHuevos">
+            <div id="PanelSaliente"></div>
+        </article>
+    </section>
+
+    <section class="CuartoModulo">
+        <article id="Camello1"></article>
+        <article id="Camello2"></article>
+        <article id="Camello3"></article>
+    </section>
+
+
+    <section class="QuintoModulo">
+        <article id="telon1"></article>
+        <article id="telon2"></article>
+    </section>
+
+
+    <section class="SextoModulo">
+        <article class="cartel1">
+            <div id="textocartel1">
+                <p>Un despiadado y racional asalariado japonés renace en un mundo alternativo similar a la Europa de la Primera Guerra Mundial, convertido en una niña llamada Tanya Degurechaff. Dotada de un gran talento militar y enfrentada a una entidad divina que ella llama “Ser X”, </p>
+                <a href ="https://search.brave.com/images?q=imagen+de+un+telon" target="_blank"><div id="boton">COMPRAR ENTRADAS</div></a>
+            </div>
+        </article>
+
+
+        <article class="cartel2">
+            <div id="textocartel2">
+                <p>Rayo McQueen se enfrenta a una nueva generación de autos de carreras, más rápidos y tecnológicamente avanzados, que amenazan con dejarlo atrás. Tras un grave accidente, deberá replantearse su futuro y descubrir que la verdadera victoria no siempre está en cruzar</p>
+                <a href ="https://search.brave.com/images?q=imagen+de+un+telon" target="_blank"><div id="boton">COMPRAR ENTRADAS</div></a>
+            </div>
+        </article>
+
+
+        <article class="cartel3">
+            <div id="textocartel3">
+                <p>Tras derrotar al Rey Demonio, la elfa maga Frieren continúa viviendo mientras sus antiguos compañeros humanos envejecen y mueren. A través de viajes tranquilos y reflexivos, Frieren comienza a comprender las emociones humanas, el valor del tiempo compartido y el .</p>
+                <a href ="https://search.brave.com/images?q=imagen+de+un+telon" target="_blank"><div id="boton">COMPRAR ENTRADAS</div></a>>
+            </div>
+        </article>
+
+
+        <article class="cartel4">
+            <div id="textocartel4">
+                <p>Marlin, un pez payaso sobreprotector, emprende una peligrosa aventura a través del océano para rescatar a su hijo Nemo, quien ha sido capturado por un buzo y llevado a una pecera en Sídney. En el camino, Marlin conoce a Dory, un pez con problemas de memoria, y j.</p>
+                <a href ="https://search.brave.com/images?q=imagen+de+un+telon" target="_blank"><div id="boton">COMPRAR ENTRADAS</div></a>
+            </div>
+        </article>
+
+    </section>
+
+
+
+    <section class="SeptimoModulo">
+        <article class="botonunir">
+        <article class="cajaformas1">
+            <div id="triangulo1"></div>
+            <div id="circulo1"></div>
+            <div id="equis1"></div>
+        </article>
+
+        <article class="cajaformas2">
+            <div id="circulo2"></div>
+            <div id="equis2"></div>
+            <div id="triangulo2"></div>
+        </article>
+        </article>
+
+    </section>
+
+
+    <section class="OctavoModulo">
+            <article class="personaje1">
+                <h1>Primer Personaje</h1>
+                <div id="Foto1"></div>
+            </article>
+            <article class="personaje2">
+                <h1>Segundo Personaje</h1>
+                <div id="Foto2"></div>
+            </article>
+            <article class="personaje3">
+                <h1>Tercer Personaje</h1>
+                <div id="Foto3"></div>
+            </article>
+
+    </section>
+</body>
+</html>

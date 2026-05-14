@@ -1,0 +1,18 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+
+
+body{
+    background: linear-gradient(gray);
+}
+
+div#NewYork{
+    background-color: blue;
+    width: 200px;
+    height: 200px;
+}

@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<style>
+    *{
+        padding: 0;
+        text-decoration: none;
+        text-align: center;
+        font-family: "Roboto", sans-serif;
+    }
+    body{
+        padding: 10px;
+        background: linear-gradient(90deg, rgb(16, 100, 16), rgb(0, 32, 0));
+       
+    }
+    main{
+        width: 60%;
+        border: 2px solid goldenrod;
+        margin: 0 auto;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        padding: 30px;
+        border-radius: 2%;
+    }
+    p{
+        margin-bottom: 15px;
+    }
+    h1,h2{
+        color: white;
+        font-weight: bold;
+    }
+    .descripcion{
+        border-left: 2px solid goldenrod;
+        border-radius: 2%;
+        background: linear-gradient(-45deg, rgba(172, 132, 29, 0.493), rgba(255, 255, 255, 0.397));
+        backdrop-filter: blur(12px);
+        padding: 20px;
+    }
+    .buscador{
+        margin-top: 30px;
+        border:1px solid gold;
+        border-radius: 2%;
+        background: linear-gradient(-45deg, rgba(172, 132, 29, 0.493), rgba(255, 255, 255, 0.397));
+        backdrop-filter: blur(12px);
+        padding: 20px;
+    }
+    .controlesBusqueda{
+        padding: 25px;
+        display: flex;
+        gap:20px;
+    }
+    #input-busqueda{
+        flex: 1; /*Ocupa todo el espacio disponible(menos hermanos y gap)*/
+        padding: 15px 20px;
+        border-radius: 5px;
+        font-size: 16px;
+        border: 2px solid goldenrod;
+        background: rgba(53, 53, 53, 0.473);
+        color: white;
+        font-weight: bold;
+        text-align: left;
+        transition: all 0.3s;
+    }
+    #input-busqueda:focus{ /*focus: evento seleccionador de Inputs*/
+        outline: none;
+        border-color: orangered;
+        box-shadow: 0px 4px 15px rgba(255, 217, 0, 0.603);
+    }
+    #btn-buscar{
+        padding: 15px 20px;
+        background:linear-gradient(85deg, goldenrod 0%, gold 100%);
+        color:rgb(15, 15, 15);
+        border:none;
+        border-radius: 10px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: all 0.3s;
+    }
+    #btn-buscar:hover{
+        transform: translateY(-5px);
+        box-shadow: 0px 4px 15px rgba(255, 217, 0, 0.603);
+    }
+    #btn-limpiar{
+        padding: 15px 20px;
+        background:linear-gradient(85deg, rgb(211, 112, 20) 0%, rgb(134, 46, 5) 100%);
+        color:rgb(15, 15, 15);
+        border:none;
+        border-radius: 10px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: all 0.3s;
+    }
+    #btn-limpiar:hover{
+        transform: translateY(-5px);
+        box-shadow: 0px 4px 15px rgba(255, 217, 4, 0.603);
+    }
+    .parrafosCursiva{
+        font-size: 12px;
+        color:white;
+        font-style: italic;
+    }
+    button span{
+        margin-left: 5px;
+    }
+    .personajes{
+        margin-top: 30px;
+        border:1px solid gold;
+        border-radius: 2%;
+        background: linear-gradient(-45deg, rgba(172, 132, 29, 0.493), rgba(255, 255, 255, 0.397));
+        backdrop-filter: blur(12px);
+        padding: 20px;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+    .ficha{
+        border: 1px solid gold;
+        border-radius: 2%;
+        width: 45%;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgb(211, 112, 20, 0.3);
+        background: linear-gradient(to right, grey , rgb(93, 128, 11));
+        transition: all 0.3s ease;
+    }
+    .ficha:hover{
+        transform: translateY(-5px);
+        box-shadow: 0 5px 15px rgb(211, 112, 20);
+        border: 2px solid rgb(115, 255, 0);
+       
+    }
+    .ficha img{
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+        background-color: rgba(63, 63, 63);
+        border-bottom: 3px solid rgb(255, 208, 0);
+        filter: blur(3px) grayscale(100%) saturate(0%);
+
+
+        transition: all 0.3s;
+    }
+    .ficha:hover img{
+         filter: blur(0px) grayscale(0%) saturate(180%);
+    }
+    .info{
+        padding: 22px;
+    }
+    .info h1{
+        color: gold;
+        font-size: 24px;
+        margin: 0 0 15px 0;
+        text-align: center;
+        text-shadow: 0 5px 15px rgba(0, 0, 0, 0.63);
+        filter: drop-shadow(0 0 10px rgb(255, 123, 0)) drop-shadow(0 0 20px rgb(0, 255, 34));
+    }
+    .info p{
+        border-top: 1px solid gold;
+        padding-top: 5px;
+        color:white;
+        font-weight: bold;
+        font-size: 12px;
+        text-align: justify;
+        text-transform:uppercase; /*TODO A MAYÚSCULAS*/
+        letter-spacing: 1px; /*Espacio entre letras*/
+        line-height: 1.4; /*Espacio entre líneas*/
+       
+    }
+    .stats{
+       
+        padding: 0px 10px;
+       
+    }
+    .stats h3{
+        color: gold;
+        font-size: 24px;
+    }
+    .stats .statConcreto{
+     
+        padding: 10px 15px;
+        display: flex;
+    }
+
+
+    .stats .statConcreto .medidor{
+        flex:1;
+        background-color: rgb(39, 39, 39);
+        border-radius: 3px;
+        overflow: hidden;
+        padding: 5px;
+        position: relative;
+    }
+    .medidor .relleno{
+        transform-origin: left center; /*Punto de ancla(anchor)*/
+        padding: 4.7px;
+    }
+    .vidaMedidor{
+        background-color: rgb(113, 247, 4);
+    }
+    .defensaMedidor{
+        background-color: rgb(4, 190, 247);
+    }
+    .ataqueMedidor{
+      background-color: rgb(247, 4, 4);  
+    }
+    .velocidadMedidor{
+      background-color: rgb(185, 5, 125);  
+    }
+    #vidaGustave{
+        transform: scaleX(0);
+        transition: all 0.8s;
+    }
+    .ficha:hover #vidaGustave{
+        transform: scaleX(0.8);
+    }
+    #defensaGustave{
+        transform: scaleX(0);
+        transition: all 0.8s;
+    }
+    .ficha:hover #defensaGustave{
+        transform: scaleX(0.4);
+    }
+    #ataqueGustave{
+        transform: scaleX(0);
+        transition: all 0.8s;
+    }
+    .ficha:hover #ataqueGustave{
+        transform: scaleX(0.9);
+    }
+    #velocidadGustave{
+        transform: scaleX(0);
+        transition: all 0.8s;
+    }
+    .ficha:hover #velocidadGustave{
+        transform: scaleX(0.75);
+    }
+    .medidor .valorMedidor{
+        /*Cómo centrar objetos independientemente de su tamaño*/
+        position: absolute;
+        top:50%;
+        left:50%;
+        transform: translate(-50%,-50%);
+        /*===================================================*/
+        color: white;
+        font-size: 8px;
+        font-weight: bold;
+        z-index: 999;
+    }
+
+    .labelStat{
+        flex: 1;
+
+    }
+
+</style>
+<body>
+    <main>
+        <h1>Módulo 1: tu primera API</h1>
+        <p>Haz clic y mira la Consola (F12)</p>
+        <section class="descripcion">
+            <h2>¿Qué va a pasar?</h2>
+            <p>Cuando pulses el botón, ocurrirá esto:</p>
+            <ol>
+                <li>JavaScript enviará una solicitud a: superheroapi.com</li>
+                <li>La API responderá con datos en formato JSON</li>
+                <li>Verás los datos en la Consola del Navegador</li>
+                <li>Si hay error, también aparecerá en la consola</li>
+            </ol>
+        </section>
+        <section class="buscador">
+            <h2>Buscar cualquier héroe</h2>
+            <div class="controlesBusqueda">
+                <input type="text"
+                id="input-busqueda"
+                placeholder="Escribe lo que quieras buscar..."
+                >
+                <button id="btn-buscar">
+                    &#128204<i class="fa-solid fa-magnifying-glass"></i><span>Buscar</span>
+                </button>
+                <button id="btn-limpiar">
+                    &#128206<i class="fa-solid fa-pepper-hot"></i><span>Limpiar</span>
+                </button>
+            </div>
+            <p class="parrafosCursiva">Prueba con el nombre que se te ocurra</p>
+        </section>
+        <section class="personajes">
+            <article class="ficha">
+                <img src="images/gustave.png">
+                <div class="info">
+                    <h1>Gustave</h1>
+                    <p>Gustave is a Character in Clair Obscur Expedition 33. Gustave, a devoted engineer turned Expeditioner, devotes his life to battling the Paintress for the future of Lumière. Characters are various members and allies of Expedition 33 who are on a quest to stop the "Paintress" from painting death. These characters are mainly party members who can fight in combat and explore the world of wonders inspired by Belle Époque France.</p>
+                </div>
+                <div class="stats">
+                    <h3>Stats</h3>
+                    <div class="statConcreto">
+                        <span class="labelStat">Vida: </span>
+                        <div class="medidor">
+                            <span class="valorMedidor">80</span>
+                            <!--Indicamos un segundo class separando con espacios-->
+                            <div class="relleno vidaMedidor" id="vidaGustave"></div>
+                        </div>
+                    </div>
+                    <div class="statConcreto">
+                        <span class="labelStat">Defensa: </span>
+                        <div class="medidor">
+                            <span class="valorMedidor">40</span>
+                            <!--Indicamos un segundo class separando con espacios-->
+                            <div class="relleno defensaMedidor" id="defensaGustave"></div>
+                        </div>
+                    </div>
+                    <div class="statConcreto">
+                        <span class="labelStat">Ataque: </span>
+                        <div class="medidor">
+                            <span class="valorMedidor">90</span>
+                            <!--Indicamos un segundo class separando con espacios-->
+                            <div class="relleno ataqueMedidor" id="ataqueGustave"></div>
+                        </div>
+                    </div>
+                    <div class="statConcreto">
+                        <span class="labelStat">Velocidad: </span>
+                        <div class="medidor">
+                            <span class="valorMedidor">75</span>
+                            <!--Indicamos un segundo class separando con espacios-->
+                            <div class="relleno velocidadMedidor" id="velocidadGustave"></div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+         <article class="ficha">
+                <img src="images/lune.png">
+                <div class="info">
+                    <h1>Lune</h1>
+                    <p>Lune is a Character in Clair Obscur Expedition 33. Lune bears the burden of her parents' legacy and the Expedition's success as she seeks to unravel the mystery of the Paintress. Characters are various members and allies of Expedition 33 who are on a quest to stop the "Paintress" from painting death. These characters are mainly party members who can fight in combat and explore the world of wonders inspired by Belle Époque France.</p>
+                </div>
+                <div class="stats">
+                    <h3>Stats</h3>
+                    <div class="statConcreto">
+                        <span class="labelStat">Vida: </span>
+                        <div class="medidor">
+                            <span class="valorMedidor">80</span>
+                            <!--Indicamos un segundo class separando con espacios-->
+                            <div class="relleno vidaMedidor" id="vidaGustave"></div>
+                        </div>
+                    </div>
+                    <div class="statConcreto">
+                        <span class="labelStat">Defensa: </span>
+                        <div class="medidor">
+                            <span class="valorMedidor">40</span>
+                            <!--Indicamos un segundo class separando con espacios-->
+                            <div class="relleno defensaMedidor" id="defensaGustave"></div>
+                        </div>
+                    </div>
+                    <div class="statConcreto">
+                        <span class="labelStat">Ataque: </span>
+                        <div class="medidor">
+                            <span class="valorMedidor">90</span>
+                            <!--Indicamos un segundo class separando con espacios-->
+                            <div class="relleno ataqueMedidor" id="ataqueGustave"></div>
+                        </div>
+                    </div>
+                    <div class="statConcreto">
+                        <span class="labelStat">Velocidad: </span>
+                        <div class="medidor">
+                            <span class="valorMedidor">75</span>
+                            <!--Indicamos un segundo class separando con espacios-->
+                            <div class="relleno velocidadMedidor" id="velocidadGustave"></div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <article class="ficha">
+                <img src="images/maelle.png">
+                <div class="info">
+                    <h1>Maelle</h1>
+                    <p>Maelle is a Character in Clair Obscur Expedition 33. Maelle, at 16, joins the Expedition not to save Lumière, but to escape it, seeking freedom, self-discovery, and a life beyond the city that never felt like home. Characters are various members and allies of Expedition 33 who are on a quest to stop the "Paintress" from painting death. These characters are mainly party members who can fight in combat and explore the world of wonders inspired by Belle Époque France.</p>
+                </div>
+                <div class="stats">
+                    <h3>Stats</h3>
+                    <div class="statConcreto">
+                        <span class="labelStat">Vida: </span>
+                        <div class="medidor">
+                            <span class="valorMedidor">80</span>
+                            <!--Indicamos un segundo class separando con espacios-->
+                            <div class="relleno vidaMedidor" id="vidaGustave"></div>
+                        </div>
+                    </div>
+                    <div class="statConcreto">
+                        <span class="labelStat">Defensa: </span>
+                        <div class="medidor">
+                            <span class="valorMedidor">40</span>
+                            <!--Indicamos un segundo class separando con espacios-->
+                            <div class="relleno defensaMedidor" id="defensaGustave"></div>
+                        </div>
+                    </div>
+                    <div class="statConcreto">
+                        <span class="labelStat">Ataque: </span>
+                        <div class="medidor">
+                            <span class="valorMedidor">90</span>
+                            <!--Indicamos un segundo class separando con espacios-->
+                            <div class="relleno ataqueMedidor" id="ataqueGustave"></div>
+                        </div>
+                    </div>
+                    <div class="statConcreto">
+                        <span class="labelStat">Velocidad: </span>
+                        <div class="medidor">
+                            <span class="valorMedidor">75</span>
+                            <!--Indicamos un segundo class separando con espacios-->
+                            <div class="relleno velocidadMedidor" id="velocidadGustave"></div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <article class="ficha">
+                <img src="images/sciell.png">
+                <div class="info">
+                    <h1>Sciell</h1>
+                    <p>Sciel is a Character in Clair Obscur Expedition 33. Sciel, a warm and outgoing farmer turned teacher, accepts life's brutality with a smile that hides a dark past. Characters are various members and allies of Expedition 33 who are on a quest to stop the "Paintress" from painting death. These characters are mainly party members who can fight in combat and explore the world of wonders inspired by Belle Époque France.</p>
+                </div>
+                <div class="stats">
+                    <h3>Stats</h3>
+                    <div class="statConcreto">
+                        <span class="labelStat">Vida: </span>
+                        <div class="medidor">
+                            <span class="valorMedidor">80</span>
+                            <!--Indicamos un segundo class separando con espacios-->
+                            <div class="relleno vidaMedidor" id="vidaGustave"></div>
+                        </div>
+                    </div>
+                    <div class="statConcreto">
+                        <span class="labelStat">Defensa: </span>
+                        <div class="medidor">
+                            <span class="valorMedidor">40</span>
+                            <!--Indicamos un segundo class separando con espacios-->
+                            <div class="relleno defensaMedidor" id="defensaGustave"></div>
+                        </div>
+                    </div>
+                    <div class="statConcreto">
+                        <span class="labelStat">Ataque: </span>
+                        <div class="medidor">
+                            <span class="valorMedidor">90</span>
+                            <!--Indicamos un segundo class separando con espacios-->
+                            <div class="relleno ataqueMedidor" id="ataqueGustave"></div>
+                        </div>
+                    </div>
+                    <div class="statConcreto">
+                        <span class="labelStat">Velocidad: </span>
+                        <div class="medidor">
+                            <span class="valorMedidor">75</span>
+                            <!--Indicamos un segundo class separando con espacios-->
+                            <div class="relleno velocidadMedidor" id="velocidadGustave"></div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </section>
+    </main>
+</body>
+</html>
+

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pruebas 1</title>
+</head>
+<style>
+     *{
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        text-decoration: none;
+        box-sizing: border-box;
+    }
+    body{
+        width: 650px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top:0;
+    }
+    section.general{
+        width: 100%;
+        height: 300px;
+        background-color: chocolate;
+        transition: background-color 2s ease-in 3s;
+    }
+    section.general:hover{
+        background-color: chartreuse;
+    }
+
+    section.panelesVerticales{
+        width: 100%;
+        height: 400px;
+        background-color: green;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #primerPanal{
+        width: 33.33%;
+        height: 4%;
+        background-color: aqua;
+        border-radius: 0px 0px 20% 20%;
+        transition: height 2s 0.5s;
+    }
+
+    #primerPanal:active{
+        height: 100%;
+    }
+
+    #segundoPanal{
+        width: 33.33%;
+        height: 4%;
+        background-color: lightskyblue;
+        border-radius: 0px 0px 20% 20%;
+         transition: height 4s 0.5s;
+    }
+    
+    #segundoPanal:active{
+        height: 100%;
+    }
+
+   #tercerPanal{
+        width: 33.33%;
+        height: 4%;
+        background-color: cyan;
+        border-radius: 0px 0px 20% 20%;
+        transition: height 1s 1ms;
+    }
+
+    #tercerPanal:active{
+        height: 100%;
+    }
+
+    section.Cartelera{
+        width: 100%;
+        height: 300px;
+        background-color: lightgreen ;
+        display: flex;
+        justify-content: space-evenly ;
+        align-items: center;
+    }
+
+    #peli1{
+        width:22% ;
+        height: 80%;
+        background-size: 100% 100%;
+        background-image: url(images/nemo.webp);
+        transition: background-image 0.8s;
+    }
+
+    #peli1:hover{
+        background-image: url(images/hisoka.jpg);
+    }
+
+        #peli2{
+        width: 22%;
+        height: 80%;
+        background-size: 100% 100%;
+        background-image: url(images/frieren.webp) ;
+        transition: background-image 0.8s;
+    }
+
+    #peli2:hover{
+        background-image: url(images/hisoka.jpg);
+    }
+
+        #peli3{
+        width: 22%;
+        height: 80%;
+        background-size: 100% 100%;
+        background-image: url(images/cars\ 3.webp) ;
+        transition: background-image 0.8s;
+    }
+
+    #peli3:hover{
+        background-image: url(images/hisoka.jpg);
+    }
+
+    #peli4{
+        width: 22%;
+        height: 80%;
+        background-size: 100% 100%;
+        background-image: url(images/tanya.webp);
+        transition: background-image 0.8s;
+    }
+
+    #peli4:hover{
+        background-image: url(images/hisoka.jpg);
+    }
+
+    section.mandanga{ 
+        width: 100%;
+        height: 400px;
+        background-color: rgb(99, 99, 214);
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+
+    section.mandanga div#articulo{
+        width: 50%;
+        height: 50%;
+        background-color: violet;
+        opacity: 0;
+        transition: opacity 0.8s;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+    section.mandanga:hover div#articulo{
+        opacity: 1;
+    }
+
+    div#articulo div#paneldescripcion{
+        width: 0%;
+        height: 100%;
+        border-radius: 10px 0px 0px 10px;
+        background-color: aliceblue;
+        transition: width 1s;
+    }
+
+    div#articulo:active div#paneldescripcion{
+        width: 80%;
+    }
+
+</style>
+<body>
+    <section class="general"></section>
+
+    <section class="panelesVerticales">
+        <article id="primerPanal"></article>
+        <article id="segundoPanal"></article>   
+        <article id="tercerPanal"></article>
+    </section>
+
+    <section class="Cartelera">
+        <div id="peli1"></div>
+        <div id="peli2"></div>
+        <div id="peli3"></div>
+        <div id="peli4"></div>
+    </section>
+
+    <section class="mandanga">
+        <div id="articulo">
+            <div id="paneldescripcion"></div>
+        </div>
+    </section>
+</body>
+</html>

@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Newsleter_Segundo</title>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon_io (1)/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon_io (1)/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+</head>
+
+
+
+
+<style>
+
+    @font-face {
+    font-family:"coito";
+    src: url(fonts/hHittoSushi.ttf);
+    }
+        
+    @font-face {
+    font-family:"CoitoSupremo";
+    src: url(fonts/ZTNature-Black.ttf);
+    }
+*{  
+        margin: 0;
+        padding: 0;
+        text-decoration: none;
+        list-style: none;
+}
+
+.fondo{
+      
+        width: 650px;
+        margin-left:auto;
+        margin-right:auto;
+        margin-top: auto;
+        background-image: url(images/fondo\ grande.png);
+        background-size: 1920px 400vh;
+        background-repeat: no-repeat;
+        background-position: center;
+}
+
+.Titulo{
+    height: 438px;
+    width: 650px;
+    border: 1px black;
+    background-size: contain;
+    background-image: url(images/Hunter_x_hunter.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+
+
+.caja{
+    width: auto;
+    height: auto;
+   
+}
+   
+#ImagenUno{
+    width: 650px;
+    height: 400px;
+    background-image: url(images/hxh1.avif);
+    background-position: center;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    justify-content: center;
+    align-items: center;
+}
+
+#ImagenDos{
+    width: 650px;
+    height: 400px;
+    background-image: url(images/la\ araña.jpg);
+    background-position: center;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    justify-content: center;
+    align-items: center;
+
+
+}
+
+#info{
+    width: 650px;
+    height: 500px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+}
+
+.foto{
+    height: 150px;
+    width: 600px;
+    border: 1px;
+    border-color: black;
+    border-radius: 20px;
+    background-color: none;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: row;
+}
+
+#FuenteTitulo{
+    font-family: coito;
+    
+}
+
+#FuenteTituloGon{
+    font-size: x-large;
+    font-family: coito;
+    color: rgb(22, 133, 22);
+}
+
+#FuenteTituloKillua{
+    font-size: x-large;
+    font-family: coito;
+    color: rgb(77, 77, 202);
+
+}
+
+#FuenteTituloHisoka{
+    font-size: x-large;
+    font-family: coito;
+    color: violet;
+}
+
+#FuenteTexto{
+    font-family: CoitoSupremo;
+
+}
+#gon{
+    height: 150px;
+    width: 150px;
+    border-radius: 10px;
+    background-image: url(images/peluche\ gon.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+#gon:hover{
+    background-image: url(images/gon.webp);
+    background-position: center;
+    background-size: 100% 100%;
+}
+
+.textoGon{
+   width: 450px;
+   height: 150px;
+   display: flex;
+   align-items: center;
+   justify-content: space-evenly;
+   flex-direction: column;
+   background-image: url(images/Nameplate\ Gon.png);
+   background-size: 100% 100%;
+   border-radius: 10px; 
+   font-family: Arial, Helvetica, sans-serif;
+}
+
+#killua{
+    height: 150px;
+    width: 150px;
+    border-radius: 10px;
+    background-image: url(images/peluche\ killua.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+#killua:hover{
+    background-image: url(images/killua.webp);
+    background-position: center;
+    background-size: 100% 100%;
+}
+
+.textokillua{
+    width: 450px;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    background-image: url(images/Nameplate\ Killua.png);
+    background-size: 100% 100%;
+    border-radius: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#hisoka{
+    height: 150px;
+    width: 150px;
+    border-radius: 10px;
+    background-image: url(images/peluche\ hisoka.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+#hisoka:active{
+    height: 150px;
+    width: 150px;
+}
+
+#hisoka:hover{
+    background-image: url(images/hisoka.jpg);
+    background-position: center;
+    background-size: 100% 100%;
+}
+
+.textohisoka{
+    width: 450px;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    background-image: url(images/Nameplate\ Hisoka.png);
+    background-size: 100% 100%;
+    border-radius: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.espacioblanco{
+    width: 400px;
+}
+
+#video{
+    width: 100%;
+    height: 100%;
+    background-color: none;  
+}
+
+#textoArañas{
+    width: 650px;
+    height: 120%;
+    display: flex;
+    align-items:center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    text-align: center;
+
+}
+
+.TituloArañas{
+    width: 600px;
+    height: 100%;
+    margin-bottom: 5px;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    margin-top: 15px;
+    font-family: Coito;
+    font-size: x-large;
+    text-shadow: 0 0 1px;
+}
+
+.Textito{
+    width: 600px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-bottom: 15px;
+    margin-top: 15px;
+    margin-left: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: justify;
+}
+
+
+#autoplay{
+     width: 100%;
+    height: 100%;
+}
+
+#Footer{
+    width: 650px;
+    height: 90px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: row;
+    }
+
+.TextoRedes{
+    width: 100px;
+    margin-top: 70px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    font-size: large ;
+}
+
+.RedesLogo{
+    width: 70px;
+    height: 70px;
+    border: 1px;
+    border-radius: 10px;
+    background-color: none;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: row;
+}
+
+#InstagramLogo{
+    width: 70px;
+    height: 70px;
+    background-image: url(images/logoInstagram.webp);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#FacebookLogo{
+    width: 70px;
+    height: 70px;
+    background-image: url(images/logoFacebook.webp);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#Manga{
+    width: 80px;
+    height: 80px;
+    background-image: url(images/logoManga.webp);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+</style>
+<body class="fondo">
+ <section class="Titulo" id="" ></section>
+    <section class="caja" id="ImagenUno">  </section>
+       
+<section>
+    <section class="caja" id="info">
+       
+        <article class="foto">
+             <a href="https://amzn.eu/d/cG4w1VG" target="_blank"><div id="gon"></div>
+                </a>
+            <div class="textoGon">
+                <h3 class="espacioblanco" id="FuenteTituloGon">GON FREECS</h3>
+                <p class="espacioblanco" id="#FuenteTexto">Lleva a casa la energía pura de Gon Freecss. Este peluche está lleno de detalles que capturan su espíritu aventurero y su sonrisa inconfundible. Perfecto para fans del anime que buscan una pieza única, suave y resistente para decorar su habitación o acompañarte en tu día a día.
+                </p>
+            </div>
+        </article>
+
+       
+        <article class="foto">
+             <a href="https://amzn.eu/d/aS98PnV" target="_blank"><div id="killua"></div>
+                </a>
+            <div class="textokillua">
+                <h3 class="espacioblanco" id="FuenteTituloKillua">Killua</h3>
+                <p class="espacioblanco" id="#FuenteTexto"> Siente el poder eléctrico de Killua con este increíble peluche inspirado en uno de los personajes más queridos de Hunter x Hunter. Su diseño detallado y su suavidad lo convierten en el compañero perfecto para cualquier fan del anime.
+                </p>
+            </div>
+
+        </article>
+        
+        <article class="foto">
+            <a href="https://amzn.eu/d/1G56bUN" target="_blank"><div id="hisoka"></div>
+                </a>
+            <div class="textohisoka">
+                <h3 class="espacioblanco" id="FuenteTituloHisoka">HISOKA</h3>
+                <p class="espacioblanco" id="#FuenteTexto">Agrega un toque misterioso y único a tu colección con el peluche de Hisoka. Su diseño llamativo refleja su personalidad impredecible, convirtiéndolo en una pieza especial que no puede faltar en la colección de cualquier fan del anime.
+                </p>
+            </div>
+        </article>
+    </section>
+   
+    
+    <section class="caja" id="video">
+         <video id="autoplay" loop muted autoplay >
+            <source src="images/Videos/huntexhunterAMV.mp4" type="video/mp4">
+        </video>
+    </section>
+
+
+    <section class="caja" id="TextoArañas">
+        <div class="TituloArañas"> <h1>Gen’ei Ryodan</h1> </div>
+        <div class="Textito"><p>El Gen’ei Ryodan, o Las Arañas, es un grupo criminal de élite en Hunter x Hunter compuesto por 13 miembros con habilidades de Nen excepcionales. Su estructura se basa en la idea de que el líder es la “cabeza” y los demás son las “piernas”: si uno muere, puede ser reemplazado, pero la Araña sigue moviéndose. Son conocidos por robar, asesinar y ejecutar misiones clandestinas con precisión absoluta, manteniendo una fuerte lealtad interna a pesar de su naturaleza criminal.</p>
+                             <br></br>
+                             <p >  Su hazaña más infame es la masacre del Clan Kurta, donde exterminaron casi por completo a la tribu para robar sus valiosos ojos carmesí, un acto que marcó el inicio de la venganza de Kurapika. Esta acción, junto con otros robos y asesinatos masivos, consolidó su reputación como una de las organizaciones más peligrosas y temidas del mundo.</p></div>
+    </section>
+    <section class="caja" id="ImagenDos"></section>
+
+
+    <section class="caja" id="Footer">
+
+        <a href="https://www.instagram.com/" target="_blank"><div class="RedesLogo" id="InstagramLogo">
+            </div>
+        </a>
+
+        <a href="https://hunterxhuntermanga.online/" target="_blank"><img src="" alt=""><div class="RedesLogo" id="Manga">
+            </div></a>
+            
+        </div>
+
+                <a href="https://www.facebook.com/watchhxh/" target="_blank"><div class="RedesLogo" id="FacebookLogo">
+            </div>
+        </div></a>
+
+    </section>
+
+    
+</section>
+
+
+   
+</body>
+</html>
+
+
+
+
+
+
+
+
+

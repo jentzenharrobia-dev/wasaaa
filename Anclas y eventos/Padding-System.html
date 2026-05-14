@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    background-color: #1a1a2e; /* Un azul noche más clarito y profundo */
+}
+        main {
+            width: 800px;  
+            margin-left: auto;
+            margin-right: auto;
+            border: 2px solid black;
+            margin: 0 auto;
+        }
+        #primero{
+            
+            height: 200px;
+            background-color: rgb(23, 23, 36);
+            margin-left: auto;
+            margin-right: auto;
+            padding: 10px;
+            text-align: center;
+            color: rgb(76, 194, 230);
+        }
+        #segundo{
+            padding: 15px;
+            margin-left: auto;
+            margin-right: auto;
+            background-color: rgb(23, 23, 36);
+            border: 2px solid black;
+        }
+         #tercero {
+        padding: 15px;
+        background-color: rgb(23, 23, 36);
+        border: 2px solid black;
+            }
+        #ventana{
+           
+            background-color: rgba(7, 18, 43, 0.795);
+            padding: 30px; /* padding: 20px 0px 20px 0px; */
+            text-align:center;
+            color: rgba(255, 255, 255, 0.733);
+            border-radius: 10px;
+            border-left: 2px red solid;
+        }
+        #ventana2 {
+        background-color: rgba(7, 18, 43, 0.795);
+        padding: 25px;
+        border-radius: 10px;
+        border: 1px rgb(0, 247, 255) solid;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        }
+        #texto{
+            font-size: 17px;
+            color: rgb(180, 228, 228);
+        }
+            #superhero{
+                font-size: 14px;
+                font-weight: bold;
+                
+            }
+            #lista{
+                text-align: center;
+                color: rgba(255, 255, 255, 0.774);
+              
+            }
+            #papa{
+                color: rgb(255, 255, 255);
+            }
+            #consola{
+                color: rgb(255, 255, 255);
+                font-weight: bold;
+            }
+    
+#buscador {
+    /* Padding horizontal alto para darle ancho al input */
+    padding: 15px 25px; 
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid rgb(76, 194, 230);
+    /* Esto asegura que el padding no "rompa" el box-model */
+    box-sizing: border-box; 
+    flex-grow: 1; /* Esto hace que el input tome todo el espacio disponible */
+    box-sizing: border-box;
+}
+/* ESTO ES LO QUE CAMBIA EL COLOR AL HACER CLIC */
+#buscador:focus {
+    border-color: #00f7ff;                /* El borde brilla más */
+    box-shadow: 0 0 15px rgba(0, 247, 255, 0.4); /* Resplandor exterior */
+    transform: scale(1.01);               /* Un ligerísimo aumento de tamaño */
+}
+    #busca{
+        color: white;
+        margin: 0;
+         text-align: center; /* O center, según prefieras */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #lupa{
+        width: 24px;
+        height: 24px;
+        background-size: contain; /* Ajusta la imagen sin deformar */
+        background-position: center;
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 8px;
+    }
+    /* Contenedor para los botones */
+.controles {
+    display: flex;
+    gap: 10px; /* Espacio entre botones */
+}
+/* Nueva fila para el input y los botones */
+/* Para asegurar que los botones sigan a la derecha en la misma fila */
+.fila-busqueda {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+/* Estilo base de los botones */
+.btn-accion {
+    /* Mantenemos el tamaño del botón pase lo que pase */
+    padding: 15px 20px; 
+    font-weight: bold;
+    white-space: nowrap; /* CRUCIAL: impide que el botón se reduzca o el texto salte */
+    border-radius: 5px;
+    cursor: pointer;
+    flex-shrink: 0;      /* GARANTÍA: prohíbe al flexbox encoger el botón */
+}
+
+/* Botón Buscar */
+#btn-buscar {
+    background-color: rgb(76, 194, 230);
+    color: rgb(23, 23, 36);
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#btn-buscar:hover {
+    box-shadow: 0 0 10px rgb(76, 194, 230);
+    transform: translateY(-5px);
+}
+
+/* Botón Limpiar */
+#btn-limpiar {
+    background-color: #ff4d4d;
+    color: #0c0c0c;
+    border: 1px solid #ff4d4d;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+#btn-limpiar:hover {
+    background-color: #ff4d4d;
+    box-shadow: 0 0 10px #ff4d4d;
+    transform: translateY(-5px);
+}
+#pequetext  {
+    text-align: center;
+    color: rgb(234, 241, 241);
+    font-size: 13px;
+    font-style: italic;
+}
+.personajes {
+   background-color: rgb(23, 23, 36);
+    padding:  30px; 
+    border-radius: 5px;
+    border: 1px solid rgb(76, 194, 230);
+    /* Esto asegura que el padding no "rompa" el box-model */
+    flex-grow: 1; /* Esto hace que el input tome todo el espacio disponible */
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    row-gap: 40px;
+    flex-wrap: wrap; /* Permite que las fichas se muevan a la siguiente línea si no caben en una sola fila */
+}
+.ficha {
+    width: 43%;
+    height: 100%; /* Para que ocupen todo el alto disponible */
+    overflow: hidden;
+    border: #00f7ff solid 1px;
+    border-radius: 5px 5px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); /* Sombra más profunda */
+    background: linear-gradient(180deg, rgba(30, 30, 50, 0.9), rgba(10, 10, 20, 1));
+    transition: all 0.3s ease;
+
+}
+.ficha:hover {
+    transform: translateY(-10px);
+    box-shadow: #0c0c0c 15px 10px 20px;
+    border: #7d11a8 solid 1px;
+     
+}
+.ficha img {
+    width: 100%;
+    height: 220px;
+    border: #00f7ff solid 1px;
+    box-shadow: #0c0c0c 10px 5px 10px;
+    border-bottom: 3px solid rgb(76, 194, 230);
+    filter: blur(3px) grayscale(100%)  saturate(0%); 
+    transition: all 0.3s ease;  
+}
+.ficha:hover img {
+    filter: blur(0px) grayscale(0%)  saturate(80%);
+}
+#descripcion {
+    color: rgb(234, 241, 241); 
+    font-size: 15px;
+    text-align: center;
+    line-height: 1.5; /* Ajusta el espacio entre líneas para mejor lectura */
+    margin-top: 10px;
+}
+#nombre {
+    color: rgb(186, 76, 230);
+    text-align: center;
+}
+/* Para que los títulos tengan ese aspecto de cómic/fuerte */
+h1, h2, h3, #nombre {
+    font-family: 'Inter', sans-serif;
+    font-weight: 900;
+    letter-spacing: -0.5px;
+    text-transform: uppercase;
+}
+.info {
+    padding: 10px 15px;
+    text-shadow: 0 5px 15px rgb(0, 12, 15); /* Agrega un resplandor azul al texto */
+}
+.info h1 {
+   color: #00f7ff; 
+    font-size: 28px;
+    text-align: center; /* Se mantiene, pero ahora será un centro real */
+    margin: 0 0 10px 0;
+    text-transform: uppercase;
+    font-weight: 900;
+   text-shadow: 0 5px 15px rgb(0, 12, 15); /* Agrega un resplandor azul al texto */
+   filter: drop-shadow(0 0 10px blue) drop-shadow(0 0 20px aqua);
+}
+.info p {
+    color: rgb(234, 241, 241);
+    font-size: 16px;
+    font-weight: bold;
+    padding-top: 8px;
+    border-top: 2px solid rgb(9, 121, 158);
+    text-transform: uppercase;
+    letter-spacing: 0.5px; /* Espacio entre letras para un efecto de estilo */
+    line-height: 1.4; /* Mejora la legibilidad al aumentar el espacio entre líneas */
+}
+/* 1. Contenedor de las barras */
+/* Contenedor principal de stats */
+.stats {
+    padding: 20px;
+    background-color: #7d11a8;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.stats span {
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 16px;
+    color: rgb(234, 241, 241);
+}
+.stats h2 {
+    color: #00f7ff;
+    margin: 0 0 5px 0;
+    font-size: 24px;
+    align-self: center;
+}
+
+/* Estilo para las barras de vida (ejemplo) */
+
+.medidor {
+    width: 100%;
+    height: 40px;
+    background-color: #444;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-top: 5px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.valor-medidor {
+    position: absolute; /* Flota sobre el relleno */
+    z-index: 2;        /* Asegura que esté por encima del color verde */
+    color: white;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px black; /* Sombra para que se lea sobre el verde brillante */
+    pointer-events: none; /* Evita que el texto interfiera con el mouse */
+    opacity: 0; /* Lo escondemos por defecto */
+    transition: opacity 0.5s ease; /* Para que aparezca suavemente */
+    
+}
+.medidor.valorMedidor {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.vidaMedidor {
+        background-color: #4dff4d;
+        
+}
+/* Cuando el ratón está sobre la ficha, mostramos los números */
+.ficha:hover .valor-medidor {
+    opacity: 1;
+}
+
+
+/* Estado base: Vida al 0% */
+.relleno {
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(90deg, #4dff4d, #00ff37);
+    
+    /* CONFIGURACIÓN DE ANIMACIÓN */
+    transform-origin: left; 
+    transform: scaleX(0); /* Empieza vacía */
+    transition: transform 0.8s ease-in-out !important; 
+}
+.stats .statconcreto {
+    background-color: #7d11a8;
+    display: flex;
+    padding: 10px 0;
+    display: flex;
+    gap: 15px;
+    /* AQUÍ ELIGES EL COLOR O IMAGEN DE FONDO */
+    background-color: rgba(0, 0, 0, 0.3); 
+    
+    align-items: flex-start; /* Mantiene el contenido a la izquierda */
+}
+
+.stats .statconcreto span {
+    background-color: cadetblue;
+    margin-bottom: 5px;
+}
+.stats .statconcreto .medidor{
+    position: relative;
+    background-color: cadetblue;
+    flex:1;
+    overflow: hidden;
+    padding: 5px;
+}
+.medidor .relleno {
+    transform-origin: left center; /* Asegura que la barra se reduzca desde la izquierda */
+    padding: 4.7px;
+    transform: scaleX(0); /* Esto se actualizará dinámicamente con JS */ 
+    transition: all 0.3s ease; /* Transición suave para cambios en la barra */
+}
+/* Definimos cuánto crece cada una al hacer hover en la ficha */
+/* --- Stats de Dr. Doom --- */
+.ficha:hover .relleno-doom-vida 
+{ transform: scaleX(0.8); }
+.ficha:hover .relleno-doom-defensa 
+{ transform: scaleX(0.85); }
+.ficha:hover .relleno-doom-ataque 
+{ transform: scaleX(0.95); }
+.ficha:hover .relleno-doom-velocidad 
+{ transform: scaleX(0.65); }
+
+/* --- Stats de Spiderman --- */
+.ficha:hover .relleno-spiderman-vida 
+{ transform: scaleX(0.75); }
+.ficha:hover .relleno-spiderman-defensa 
+{ transform: scaleX(0.6); }
+.ficha:hover .relleno-spiderman-ataque 
+{ transform: scaleX(0.8); }
+.ficha:hover .relleno-spiderman-velocidad 
+{ transform: scaleX(1); }
+
+/* --- Stats de Iron Man --- */
+.ficha:hover .relleno-ironman-vida 
+{ transform: scaleX(0.8); }
+.ficha:hover .relleno-ironman-defensa 
+{ transform: scaleX(0.85); }
+.ficha:hover .relleno-ironman-ataque 
+{ transform: scaleX(0.9); }
+.ficha:hover .relleno-ironman-velocidad 
+{ transform: scaleX(0.7); }
+
+/* --- Stats de Apocalipsis --- */
+.ficha:hover .relleno-apocalipsis-vida 
+{ transform: scaleX(1); }
+.ficha:hover .relleno-apocalipsis-defensa 
+{ transform: scaleX(0.95); }
+.ficha:hover .relleno-apocalipsis-ataque 
+{ transform: scaleX(1); }
+.ficha:hover .relleno-apocalipsis-velocidad 
+{ transform: scaleX(0.6); }
+
+#vida .relleno { 
+    background: linear-gradient(90deg, #4dff4d, #00ff37); 
+}
+#defensa .relleno { 
+    background: linear-gradient(90deg, #4d8bff, #0055ff); 
+}
+#ataque .relleno { 
+    background: linear-gradient(90deg, #ff4d4d, #cc0000); 
+}
+#velocidad .relleno { 
+    background: linear-gradient(90deg, #ffcc00, #ff9900); 
+}
+/* Stats de Hulk */
+.ficha:hover .relleno-hulk-vida 
+{ transform: scaleX(1); }
+.ficha:hover .relleno-hulk-defensa 
+{ transform: scaleX(0.95); }
+.ficha:hover .relleno-hulk-ataque 
+{ transform: scaleX(1); }
+.ficha:hover .relleno-hulk-velocidad 
+{ transform: scaleX(0.55); }
+
+/* Stats de Thor */
+.ficha:hover .relleno-thor-vida 
+{ transform: scaleX(0.9); }
+.ficha:hover .relleno-thor-defensa 
+{ transform: scaleX(0.85); }
+.ficha:hover .relleno-thor-ataque 
+{ transform: scaleX(0.98); }
+.ficha:hover .relleno-thor-velocidad 
+{ transform: scaleX(0.8); }
+</style>
+</head>
+<body>
+    <main>
+    <div id="primero"><H1>Modulo: Tu primera API</H1><br><span id="texto">Haz clic y mira la consola (F12)</span></div>
+    <div id="segundo"><div id="ventana"> <h2 id="papa">¿Que va a pasar?</h2><p>Cuando pulses el botón, ocurrirá esto:</p><br><ol id="lista"><li>JavaScript enviara una solicitud a <span id="superhero">superheroapi.com</span></li>
+    <li>la API respondera con datos en formato JSON.</li>
+    <li>Veras los datos en la <span id="consola">consola del navegador.</span></li>
+    <li>si hay error tambien aparecera en la consola.</li>
+    </ol></div>
+
+    </div>
+    <div id="tercero"><div id="ventana2"><h3 id="busca"> 
+    <div id="lupa" style="background-image:url(imagenes/lupa1.png)"></div>
+    Busca cualquier héroe</h3>
+
+  <div class="fila-busqueda">
+            <input type="text" id="buscador" placeholder="Escribe el nombre del héroe...">
+            
+            <div class="controles">
+                <button id="btn-buscar" class="btn-accion">🔍 BUSCAR</button>
+                <button id="btn-limpiar" class="btn-accion">🗑️ LIMPIAR</button>
+            </div>
+        </div>
+    </div>
+    <p id="pequetext">Prueba por ejemplo: "Batman", "Flash", "Superman"</p>
+</div>
+<section class="personajes">
+    <article class="ficha">
+        <img src="images/drdoom.webp">
+            <div class="info">
+                <h1 id="nombre">Dr.Doom</h1>
+        <p id="descripcion">El Dr. Doom es un villano icónico de Marvel, conocido por su inteligencia y su armadura plateada, ademas es el villano de los 4 fantasticos. <br> Posee mucha fuerza tanta como para luchar con heroes o villanos poderosos como Hulk o Thanos.</p>
+            </div>
+    <div class="stats">
+    <h2>stats</h2>
+    <span>Vida: </span>
+    <div class="medidor" id="vida">
+        <span class="valor-medidor">80%</span>
+        <div class="relleno relleno-doom-vida"></div> 
+    </div>
+
+    <span>Defensa:</span>
+    <div class="medidor" id="defensa">
+        <span class="valor-medidor">75%</span>
+        <div class="relleno relleno-doom-defensa"></div>
+    </div>
+
+    <span>Ataque:</span>
+    <div class="medidor" id="ataque">
+        <span class="valor-medidor">95%</span>
+        <div class="relleno relleno-doom-ataque"></div>
+    </div>
+
+    <span>Velocidad:</span>
+    <div class="medidor" id="velocidad">
+        <span class="valor-medidor">65%</span>
+        <div class="relleno relleno-doom-velocidad"></div>
+    </div>
+</div>
+</div>
+    </div>
+</div>
+        </div>
+    </article>
+      <article class="ficha">
+        <img src="images/spiderman.webp">
+        <div class="info">
+        <h1 id="nombre">Spiderman</h1>
+        <p id="descripcion">Spider-Man es Peter Parker, criado por sus tíos May y Ben, obtiene poderes arácnidos (fuerza, agilidad, sentido arácnido) tras ser picado por una araña.<br> Equilibrando su vida personal con sus deberes heroicos bajo el lema "Un gran poder conlleva una gran responsabilidad".</p>
+        </div>
+        <div class="stats">
+    <h2>stats</h2>
+    <span>Vida: </span>
+    <div class="medidor" id="vida">
+        <span class="valor-medidor">75%</span>
+        <div class="relleno relleno-spiderman-vida"></div> 
+    </div>
+    <span>Defensa:</span>
+    <div class="medidor" id="defensa">
+        <span class="valor-medidor">60%</span>
+        <div class="relleno relleno-spiderman-defensa"></div>
+    </div>
+    <span>Ataque:</span>
+    <div class="medidor" id="ataque">
+        <span class="valor-medidor">80%</span>
+        <div class="relleno relleno-spiderman-ataque"></div>
+    </div>
+    <span>Velocidad:</span>
+    <div class="medidor" id="velocidad">
+        <span class="valor-medidor">100%</span>
+        <div class="relleno relleno-spiderman-velocidad"></div>
+    </div>
+</div>
+    </article>
+    <article class="ficha">
+        <img src="images/ironman.webp">
+        <div class="info">
+        <h1 id="nombre">Iron Man</h1>
+        <p id="descripcion">Iron Man es Tony Stark, un genio inventor y empresario que crea una armadura de alta tecnología para proteger el mundo. <br> Con su inteligencia y recursos, combate el crimen y defiende la humanidad con su poderosa armadura, también es uno de los heroes de los Vengadores junto a Capitán América, Thor, y Hulk.</p>
+        </div>
+        <div class="stats">
+    <h2>stats</h2>
+    <span>Vida: </span>
+    <div class="medidor" id="vida">
+        <span class="valor-medidor">80%</span>
+        <div class="relleno relleno-ironman-vida"></div> 
+    </div>
+
+    <span>Defensa:</span>
+    <div class="medidor" id="defensa">
+        <span class="valor-medidor">85%</span>
+        <div class="relleno relleno-ironman-defensa"></div>
+    </div>
+
+    <span>Ataque:</span>
+    <div class="medidor" id="ataque">
+        <span class="valor-medidor">90%</span>
+        <div class="relleno relleno-ironman-ataque"></div>
+    </div>
+
+    <span>Velocidad:</span>
+    <div class="medidor" id="velocidad">
+        <span class="valor-medidor">70%</span>
+        <div class="relleno relleno-ironman-velocidad"></div>
+    </div>
+</div>
+    </article>
+    <article class="ficha">
+        <img src="images/apocalipsis.webp">
+        <div class="info">
+        <h1 id="nombre">Apocalipsis</h1>
+        <p id="descripcion">Apocalipsis (En Sabah Nur) es uno de los primeros y más poderosos mutantes del Universo Marvel, creado en el antiguo Egipto hace 5,000 años. Es un villano icónico de los X-Men, inmortal y con control molecular total, lo que le permite alterar su forma, tamaño y regenerarse. <br>Cree firmemente en eliminar a los débiles para asegurar la supremacía mutante del más fuerte. </p>
+        </div>
+        <div class="stats">
+    <h2>stats</h2>
+    <span>Vida: </span>
+    <div class="medidor" id="vida">
+        <span class="valor-medidor">100%</span>
+        <div class="relleno relleno-apocalipsis-vida"></div> 
+    </div>
+
+    <span>Defensa:</span>
+    <div class="medidor" id="defensa">
+        <span class="valor-medidor">95%</span>
+        <div class="relleno relleno-apocalipsis-defensa"></div>
+    </div>
+
+    <span>Ataque:</span>
+    <div class="medidor" id="ataque">
+        <span class="valor-medidor">100%</span>
+        <div class="relleno relleno-apocalipsis-ataque"></div>
+    </div>
+
+    <span>Velocidad:</span>
+    <div class="medidor" id="velocidad">
+        <span class="valor-medidor">60%</span>
+        <div class="relleno relleno-apocalipsis-velocidad"></div>
+    </div>
+</div>
+    </article>
+    <article class="ficha">
+    <img src="images/hulk.webp">
+    <div class="info">
+        <h1 id="nombre">Hulk</h1>
+        <p id="descripcion">Bruce Banner se transforma en este coloso esmeralda impulsado por la rabia. Posee una fuerza física virtualmente ilimitada y una capacidad de regeneración asombrosa. Cuanto más se enfada, más fuerte se hace, siendo capaz de destruir ejércitos enteros por sí solo.</p>
+    </div>
+    <div class="stats">
+        <h2>stats</h2>
+        <span>Vida: </span>
+        <div class="medidor" id="vida">
+            <span class="valor-medidor">100%</span>
+            <div class="relleno relleno-hulk-vida"></div> 
+        </div>
+        <span>Defensa:</span>
+        <div class="medidor" id="defensa">
+            <span class="valor-medidor">95%</span>
+            <div class="relleno relleno-hulk-defensa"></div>
+        </div>
+        <span>Ataque:</span>
+        <div class="medidor" id="ataque">
+            <span class="valor-medidor">100%</span>
+            <div class="relleno relleno-hulk-ataque"></div>
+        </div>
+        <span>Velocidad:</span>
+        <div class="medidor" id="velocidad">
+            <span class="valor-medidor">55%</span>
+            <div class="relleno relleno-hulk-velocidad"></div>
+        </div>
+    </div>
+</article>
+
+<article class="ficha">
+    <img src="images/thor.webp ">
+    <div class="info">
+        <h1 id="nombre">Thor</h1>
+        <p id="descripcion">El Dios del Trueno y heredero al trono de Asgard. Armado con su martillo Mjolnir, controla el rayo y el clima. Thor combina la fisiología de un dios con siglos de experiencia en combate, poseyendo una resistencia y poder de ataque de nivel cósmico.</p>
+    </div>
+    <div class="stats">
+        <h2>stats</h2>
+        <span>Vida: </span>
+        <div class="medidor" id="vida">
+            <span class="valor-medidor">90%</span>
+            <div class="relleno relleno-thor-vida"></div> 
+        </div>
+        <span>Defensa:</span>
+        <div class="medidor" id="defensa">
+            <span class="valor-medidor">85%</span>
+            <div class="relleno relleno-thor-defensa"></div>
+        </div>
+        <span>Ataque:</span>
+        <div class="medidor" id="ataque">
+            <span class="valor-medidor">98%</span>
+            <div class="relleno relleno-thor-ataque"></div>
+        </div>
+        <span>Velocidad:</span>
+        <div class="medidor" id="velocidad">
+            <span class="valor-medidor">80%</span>
+            <div class="relleno relleno-thor-velocidad"></div>
+        </div>
+    </div>
+</article>
+</section>
+    </main>
+</body>
+</html>

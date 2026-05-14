@@ -1,0 +1,85 @@
+
+    *{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+    }
+
+    body{
+        height: 200vh;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+
+    }
+
+    /* Contenedores de 4 objetos con transicion (se hace mas grande) */
+    img{
+        width: 100%;
+        height: 100%;
+        border-radius: 10%;
+    }
+
+    section.Contenedor_4Objetos{
+        width: 100vw;
+        height: 60vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: gray;
+        flex-direction: row;
+        gap: 50px;
+    }
+
+    article.Objeto{
+        width: 20%;
+        height: 90%;
+        background-color: lightgreen;
+        border-radius: 10%;
+        transition: width 1s, height 1s;
+    }
+
+    article.Objeto:hover{
+        width: 22%;
+        height: 93%;
+    }
+    /*-------------------------------*/
+
+    /*Contenedores de 4 objetos ocn panel saliente*/
+
+    section.Contenedor_4Objetos{
+        width: 100vw;
+        height: 60vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: gray;
+        flex-direction: row;
+        gap: 50px;
+    }
+
+    article.Objeto{
+        width: 20%;
+        height: 90%;
+        background-color: lightgreen;
+        border-radius: 10%;
+        transition: width 1s, height 1s;
+        display: flex;
+        align-items: center;
+        align-items: center;
+    }
+
+    article.Objeto:hover{
+        width: 22%;
+        height: 93%;
+    }
+
+    div.Panel_Saliente{
+        
+    }
+    
+
+    

@@ -1,0 +1,265 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario bonito</title>
+    <style>
+        :root {
+            --bg1: #0b608e;
+            --bg2: #1bbae9;
+            --card: #ffffff;
+            --text-dark: #172739;
+            --text-soft: #556379;
+            --green: #22c55e;
+            --green-hover: #16a34a;
+            --border: #d2e6f5;
+            --shadow: 0 10px 30px rgba(2, 30, 58, 0.12);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, var(--bg1), var(--bg2));
+            min-height: 100vh;
+            display: grid;
+            place-items: center;
+            color: var(--text-dark);
+        }
+
+        .form-wrap {
+            width: min(95%, 900px);
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 16px;
+            box-shadow: var(--shadow);
+            padding: 24px;
+            border: 1px solid var(--border);
+        }
+
+        .form-title {
+            font-size: 1.8rem;
+            margin-bottom: 12px;
+            color: #08334f;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .form-subtitle {
+            margin: 0 0 20px 0;
+            color: var(--text-soft);
+            font-weight: 600;
+        }
+
+        fieldset {
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 16px;
+            margin-bottom: 16px;
+        }
+
+        legend {
+            font-weight: 700;
+            color: #0f4a75;
+            padding: 0 8px;
+            font-size: 1rem;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 14px;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 14px;
+        }
+
+        label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 6px;
+            color: #17405d;
+        }
+
+        input[type='text'],
+        input[type='password'],
+        input[type='date'],
+        select,
+        textarea,
+        input[type='range'] {
+            width: 100%;
+            border: 1px solid #bdd7ef;
+            border-radius: 10px;
+            padding: 10px 12px;
+            font-size: 0.95rem;
+            color: #1c3b57;
+            background-color: #fff;
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+            outline: none;
+            border-color: var(--green);
+            box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.15);
+        }
+
+        .small-label {
+            margin-top: 0.25rem;
+            font-size: 0.84rem;
+            color: var(--text-soft);
+        }
+
+        .option-row {
+            display: flex;
+            gap: 16px;
+            align-items: center;
+            margin-top: 8px;
+            flex-wrap: wrap;
+        }
+
+        .option-row input[type='radio'],
+        .option-row input[type='checkbox'] {
+            accent-color: var(--green);
+            margin-right: 6px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 12px;
+            justify-content: flex-end;
+            flex-wrap: wrap;
+            margin-top: 10px;
+        }
+
+        button {
+            border: none;
+            font-weight: 700;
+            border-radius: 10px;
+            padding: 12px 20px;
+            min-width: 130px;
+            cursor: pointer;
+            transition: transform 0.18s ease, background-color 0.18s ease, opacity 0.18s ease;
+        }
+
+        button:hover {
+            transform: translateY(-1px);
+            opacity: 0.92;
+        }
+
+        .btn-primary {
+            background: linear-gradient(120deg, #16a34a, #22c55e);
+            color: white;
+        }
+
+        .btn-reset {
+            background: #8fa7b8;
+            color: white;
+        }
+
+        .btn-secondary {
+            background: #1f93f3;
+            color: white;
+        }
+
+        @media (max-width: 700px) {
+            .grid-2,
+            .grid-3 {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main class="form-wrap">
+        <h1 class="form-title">Ficha de Usuario</h1>
+        <p class="form-subtitle">Completa los datos y pulsa enviar para guardar tu información</p>
+
+        <form>
+            <fieldset>
+                <legend>Información personal</legend>
+                <div class="grid-2">
+                    <div>
+                        <label for="inp_Nombre">Nombre</label>
+                        <input id="inp_Nombre" name="Nombre" type="text" placeholder="Escribre el nombre..." required>
+                    </div>
+                    <div>
+                        <label for="inp_apellido">Apellido</label>
+                        <input id="inp_apellido" name="Apellido" type="text" placeholder="Escribre el apellido..." required>
+                    </div>
+                    <div>
+                        <label for="inp_direccion">Dirección</label>
+                        <input id="inp_direccion" name="Direccion" type="text" placeholder="Escribre la direccion..." required>
+                    </div>
+                    <div>
+                        <label for="inp_edad">Edad</label>
+                        <input id="inp_edad" name="Edad" type="text" placeholder="Escribre la edad..." required>
+                    </div>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Ubicación</legend>
+                <div class="grid-2">
+                    <div>
+                        <label for="Pais">País</label>
+                        <select id="Pais" name="Pais">
+                            <option value="ninguno">...</option>
+                            <option value="España">España</option>
+                            <option value="Francia">Francia</option>
+                            <option value="Alemania">Alemania</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="Ciudades">Ciudad</label>
+                        <select id="Ciudades" name="Ciudades">
+                            <option value="ninguno">...</option>
+                            <option value="Malaga">Málaga</option>
+                            <option value="Bilbao">Bilbao</option>
+                            <option value="Madrid">Madrid</option>
+                            <option value="Barcelona">Barcelona</option>
+                            <option value="Valencia">Valencia</option>
+                        </select>
+                    </div>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Género</legend>
+                <div class="option-row">
+                    <label><input type="radio" name="Objeto" value="Hombre"> Hombre</label>
+                    <label><input type="radio" name="Objeto" value="Mujer"> Mujer</label>
+                    <label><input type="radio" name="Objeto" value="Therian"> Therian</label>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Intereses</legend>
+                <div class="option-row">
+                    <label><input type="checkbox" name="Intereses" value="Deportes"> Deportes</label>
+                    <label><input type="checkbox" name="Intereses" value="Música"> Música</label>
+                    <label><input type="checkbox" name="Intereses" value="Cine"> Cine</label>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Opinión</legend>
+                <label for="txtOpinion">Danos tu opinión</label>
+                <textarea id="txtOpinion" name="Opinion" rows="5" placeholder="Escribe aquí..."></textarea>
+            </fieldset>
+
+            <div class="buttons">
+                <button type="submit" class="btn-primary">Enviar</button>
+                <button type="reset" class="btn-reset">Limpiar</button>
+                <button type="button" class="btn-secondary" onclick="alert('Ver Catálogo');">Ver Catálogo</button>
+            </div>
+        </form>
+    </main>
+</body>
+</html>

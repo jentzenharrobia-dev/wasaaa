@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+     *{
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        text-decoration: none;
+        box-sizing: border-box;
+    }
+    body{
+        width: 650px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top:0;
+    }
+    section.general{
+        width: 100%;
+        height: 300px;
+        background-color: chocolate;
+        transition: background-color 2s ease-in 3s;
+    }
+    section.general:hover{
+        background-color: chartreuse;
+    }
+
+
+
+
+    section.panelesVerticales{
+        width: 100%;
+        height: 400px;
+        background-color: black;
+        display: flex;
+        justify-content:center;
+        align-items: flex-start;
+    }
+    #primerPanal{
+        width: 33.33%;
+        height: 4%;
+        background-color: coral;
+        border-radius: 0px 0px 20% 20%;
+        transition: height 2s 0.5s;
+    }
+    #primerPanal:active{
+        height: 100%;
+    }
+    #segundoPanal{
+        width: 33.33%;
+        height: 4%;
+        background-color: rgb(80, 255, 197);
+        border-radius: 0px 0px 20% 20%;
+        transition: height 2s ease-in-out;
+    }
+    #segundoPanal:active{
+        height: 100%;
+    }
+    #tercerPanal{
+        width: 33.33%;
+        height: 4%;
+        background-color: rgb(173, 22, 105);
+        border-radius: 0px 0px 20% 20%;
+        transition: height 3s ease-in-out 4s;
+    }
+    #tercerPanal:active{
+        height: 100%;
+    }
+    section.cartelera{
+        width: 100%;
+        height: 300px;
+        background-color: skyblue;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        transition: background-color 1s;
+    }
+    section.cartelera:hover{
+        background-color: red;
+    }
+    #peli1{
+        width: 22%;
+        height: 80%;
+        background-image:url(imagenes/killBill_B.png) ;
+        background-size: 100% 100%;
+        border-radius: 2%;
+        transition: background-image 0.8s;
+    }
+    #peli1:hover{
+        background-image:url(imagenes/killBill.jpg) ;
+    }
+    #peli2{
+     width: 22%;
+        height: 80%;
+        background-image:url(imagenes/lord_B.png) ;
+        background-size: 100% 100%;
+        border-radius: 2%;
+        transition: background-image 0.8s;
+    }
+    #peli2:hover{
+        background-image:url(imagenes/lord.jpg) ;
+    }
+    #peli3{
+         width: 22%;
+        height: 80%;
+        background-image:url(imagenes/miserables_B.png) ;
+        background-size: 100% 100%;
+        border-radius: 2%;
+        transition: background-image 0.8s;
+    }
+    #peli3:hover{
+        background-image:url(imagenes/miserables.jpg) ;
+    }
+    #peli4{
+         width: 22%;
+        height: 80%;
+        background-image:url(imagenes/nemo_B.png) ;
+        background-size: 100% 100%;
+        border-radius: 2%;
+        transition: background-image 0.8s;
+    }
+    #peli4:hover{
+        background-image:url(imagenes/nemo.jpeg) ;
+    }
+
+
+    section.retrato{
+         width: 100%;
+        height: 300px;
+        background-color: rgb(248, 175, 79);
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+    #MRajoy{
+        width: 40%;
+        height: 90%;
+        background-image: url(imagenes/MRajoy.jpg);
+        background-size: 100% 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+        transition: background-size 0.3s, box-shadow 0.5s,
+                    border-radius 0.4s;
+    }
+    #MRajoy:hover{
+        background-size: 180% 180%;
+        box-shadow: 10px 3px 5px black;
+        border-radius: 40%;
+    }
+    section.mandanga{
+         width: 100%;
+        height: 400px;
+        background-color: rgb(223, 175, 19);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    section.mandanga div#articulo{
+        width: 50%;
+        height: 90%;
+        background-image: url(imagenes/huevos.jpg);
+        background-size: 100% 100%;
+        border-radius: 5% 0 0 5%;
+        opacity: 0;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        transition: opacity 0.5s;
+    }
+    section.mandanga:hover div#articulo{
+        opacity: 1;
+    }
+    div#articulo div#panelDescripcion{
+        width: 0%;
+        height: 100%;
+        border-radius: 10% 0 0 10%;
+        background-color: bisque;
+        display: flex;
+        justify-content: center;
+        overflow: hidden;
+        align-items: center;
+        transition: width 2s, border 1s;
+       
+    }
+
+
+    div#articulo:active div#panelDescripcion{
+        border-left: 2px solid black;
+        width: 80%;
+    }
+
+
+    div#articulo div#panelDescripcion p{
+        width: 80%;
+        height: 80%;
+        font-size: 18px;
+        opacity: 0;
+        transition: opacity 4s 1s;
+    }
+    div#articulo:active div#panelDescripcion p{
+        opacity: 1;
+    }
+    .transformaciones{
+        width: 100%;
+        height: 500px;
+        background-color: darkkhaki;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-direction: column;
+        overflow: hidden;
+    }
+    .transformaciones #movimiento{
+        transform: translate(0px,0px);
+    }
+    .transformaciones:active #movimiento{
+        transform: translate(600px,0px);
+    }
+    .transformaciones:active #escalado{
+        transform: translate(-600px,0px);
+    }
+    #movimiento{
+        width: 20%;
+        height: 20%;
+        background-color: blueviolet;
+        /*transform: translate(0px,0px);*/
+        transition: transform 3s;
+    }
+    #movimiento:hover{
+        transform: translate(600px, 50px);
+    }
+    #escalado{
+        width: 20%;
+        height: 20%;
+        background-color: rgb(63, 212, 17);
+        transform: scale(1.5,1.5);
+        box-shadow: 3px 3px 10px black;
+        transition: transform 1s;
+    }
+    #escalado:active{
+        transform: scale(0.5, 0.5);
+    }
+    #rotacion{
+        width: 20%;
+        height: 20%;
+        background-color: rgb(212, 40, 17);
+        transform: rotate(1deg);
+        transition: transform 3s ease-in-out 1s;
+    }
+    #rotacion:hover{
+        transform: rotate(180deg);
+    }
+    #PerroSanchez{
+        width: 20%;
+        height: 20%;
+        background-color: rgb(69, 17, 212);
+        transition: transform 2s;
+    }
+    #PerroSanchez:active{
+        transform: scale(1.2, 1.2)
+                   translate(-200px, -200px)
+                   rotate(-45deg);
+    }
+
+
+</style>
+<body>
+    <section class="mandanga">
+        <div id="articulo">
+            <div id="panelDescripcion">
+                <p>Son una fuete en selenio, un antioxidante que es importante para la función de la tiroides, el sistema inmune y la salud mental, también contiene vitamina D, B6, B12, zinc y hierro y son una herramienta para combatir el sobrepeso, pues cada pieza solo contiene 75 calorías.</p>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+    <section class="general"></section>
+
+
+    <section class="panelesVerticales">
+        <article id="primerPanal"></article>
+        <article id="segundoPanal"></article>
+        <article id="tercerPanal"></article>
+    </section>
+
+
+    <section class="cartelera">
+        <div id="peli1"></div>
+        <div id="peli2"></div>
+        <div id="peli3"></div>
+        <div id="peli4"></div>
+    </section>
+
+
+    <section class="retrato">
+        <article id="MRajoy"></article>
+    </section>
+
+
+    <section class="transformaciones">
+        <article id="movimiento"></article>
+        <article id="escalado"></article>
+        <article id="rotacion"></article>
+        <article id="PerroSanchez"></article>
+    </section>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+     *{
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        text-decoration: none;
+        box-sizing: border-box;
+    }
+    body{
+        width: 650px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top:0;
+    }
+    section.general{
+        width: 100%;
+        height: 300px;
+        background-color: chocolate;
+        transition: background-color 2s ease-in 3s;
+    }
+    section.general:hover{
+        background-color: chartreuse;
+    }
+
+
+
+
+    section.panelesVerticales{
+        width: 100%;
+        height: 400px;
+        background-color: black;
+        display: flex;
+        justify-content:center;
+        align-items: flex-start;
+    }
+    #primerPanal{
+        width: 33.33%;
+        height: 4%;
+        background-color: coral;
+        border-radius: 0px 0px 20% 20%;
+        transition: height 2s 0.5s;
+    }
+    #primerPanal:active{
+        height: 100%;
+    }
+    #segundoPanal{
+        width: 33.33%;
+        height: 4%;
+        background-color: rgb(80, 255, 197);
+        border-radius: 0px 0px 20% 20%;
+        transition: height 2s ease-in-out;
+    }
+    #segundoPanal:active{
+        height: 100%;
+    }
+    #tercerPanal{
+        width: 33.33%;
+        height: 4%;
+        background-color: rgb(173, 22, 105);
+        border-radius: 0px 0px 20% 20%;
+        transition: height 3s ease-in-out 4s;
+    }
+    #tercerPanal:active{
+        height: 100%;
+    }
+    section.cartelera{
+        width: 100%;
+        height: 300px;
+        background-color: skyblue;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        transition: background-color 1s;
+    }
+    section.cartelera:hover{
+        background-color: red;
+    }
+    #peli1{
+        width: 22%;
+        height: 80%;
+        background-image:url(imagenes/killBill_B.png) ;
+        background-size: 100% 100%;
+        border-radius: 2%;
+        transition: background-image 0.8s;
+    }
+    #peli1:hover{
+        background-image:url(imagenes/killBill.jpg) ;
+    }
+    #peli2{
+     width: 22%;
+        height: 80%;
+        background-image:url(imagenes/lord_B.png) ;
+        background-size: 100% 100%;
+        border-radius: 2%;
+        transition: background-image 0.8s;
+    }
+    #peli2:hover{
+        background-image:url(imagenes/lord.jpg) ;
+    }
+    #peli3{
+         width: 22%;
+        height: 80%;
+        background-image:url(imagenes/miserables_B.png) ;
+        background-size: 100% 100%;
+        border-radius: 2%;
+        transition: background-image 0.8s;
+    }
+    #peli3:hover{
+        background-image:url(imagenes/miserables.jpg) ;
+    }
+    #peli4{
+         width: 22%;
+        height: 80%;
+        background-image:url(imagenes/nemo_B.png) ;
+        background-size: 100% 100%;
+        border-radius: 2%;
+        transition: background-image 0.8s;
+    }
+    #peli4:hover{
+        background-image:url(imagenes/nemo.jpeg) ;
+    }
+
+
+    section.retrato{
+         width: 100%;
+        height: 300px;
+        background-color: rgb(248, 175, 79);
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+    #MRajoy{
+        width: 40%;
+        height: 90%;
+        background-image: url(imagenes/MRajoy.jpg);
+        background-size: 100% 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+        transition: background-size 0.3s, box-shadow 0.5s,
+                    border-radius 0.4s;
+    }
+    #MRajoy:hover{
+        background-size: 180% 180%;
+        box-shadow: 10px 3px 5px black;
+        border-radius: 40%;
+    }
+    section.mandanga{
+         width: 100%;
+        height: 400px;
+        background-color: rgb(223, 175, 19);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    section.mandanga div#articulo{
+        width: 50%;
+        height: 90%;
+        background-image: url(imagenes/huevos.jpg);
+        background-size: 100% 100%;
+        border-radius: 5% 0 0 5%;
+        opacity: 0;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        transition: opacity 0.5s;
+    }
+    section.mandanga:hover div#articulo{
+        opacity: 1;
+    }
+    div#articulo div#panelDescripcion{
+        width: 0%;
+        height: 100%;
+        border-radius: 10% 0 0 10%;
+        background-color: bisque;
+        display: flex;
+        justify-content: center;
+        overflow: hidden;
+        align-items: center;
+        transition: width 2s, border 1s;
+       
+    }
+
+
+    div#articulo:active div#panelDescripcion{
+        border-left: 2px solid black;
+        width: 80%;
+    }
+
+
+    div#articulo div#panelDescripcion p{
+        width: 80%;
+        height: 80%;
+        font-size: 18px;
+        opacity: 0;
+        transition: opacity 4s 1s;
+    }
+    div#articulo:active div#panelDescripcion p{
+        opacity: 1;
+    }
+    .transformaciones{
+        width: 100%;
+        height: 500px;
+        background-color: darkkhaki;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-direction: column;
+        overflow: hidden;
+    }
+    .transformaciones #movimiento{
+        transform: translate(0px,0px);
+    }
+    .transformaciones:active #movimiento{
+        transform: translate(600px,0px);
+    }
+    .transformaciones:active #escalado{
+        transform: translate(-600px,0px);
+    }
+    #movimiento{
+        width: 20%;
+        height: 20%;
+        background-color: blueviolet;
+        /*transform: translate(0px,0px);*/
+        transition: transform 3s;
+    }
+    #movimiento:hover{
+        transform: translate(600px, 50px);
+    }
+    #escalado{
+        width: 20%;
+        height: 20%;
+        background-color: rgb(63, 212, 17);
+        transform: scale(1.5,1.5);
+        box-shadow: 3px 3px 10px black;
+        transition: transform 1s;
+    }
+    #escalado:active{
+        transform: scale(0.5, 0.5);
+    }
+    #rotacion{
+        width: 20%;
+        height: 20%;
+        background-color: rgb(212, 40, 17);
+        transform: rotate(1deg);
+        transition: transform 3s ease-in-out 1s;
+    }
+    #rotacion:hover{
+        transform: rotate(180deg);
+    }
+    #PerroSanchez{
+        width: 20%;
+        height: 20%;
+        background-color: rgb(69, 17, 212);
+        transition: transform 2s;
+    }
+    #PerroSanchez:active{
+        transform: scale(1.2, 1.2)
+                   translate(-200px, -200px)
+                   rotate(-45deg);
+    }
+
+
+</style>
+<body>
+    <section class="mandanga">
+        <div id="articulo">
+            <div id="panelDescripcion">
+                <p>Son una fuete en selenio, un antioxidante que es importante para la función de la tiroides, el sistema inmune y la salud mental, también contiene vitamina D, B6, B12, zinc y hierro y son una herramienta para combatir el sobrepeso, pues cada pieza solo contiene 75 calorías.</p>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+    <section class="general"></section>
+
+
+    <section class="panelesVerticales">
+        <article id="primerPanal"></article>
+        <article id="segundoPanal"></article>
+        <article id="tercerPanal"></article>
+    </section>
+
+
+    <section class="cartelera">
+        <div id="peli1"></div>
+        <div id="peli2"></div>
+        <div id="peli3"></div>
+        <div id="peli4"></div>
+    </section>
+
+
+    <section class="retrato">
+        <article id="MRajoy"></article>
+    </section>
+
+
+    <section class="transformaciones">
+        <article id="movimiento"></article>
+        <article id="escalado"></article>
+        <article id="rotacion"></article>
+        <article id="PerroSanchez"></article>
+    </section>
+</body>
+</html>
+

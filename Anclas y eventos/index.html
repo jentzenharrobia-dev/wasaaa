@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crunchyroll trucho</title>
+    <link rel="stylesheet" href="CSS/crunchyroll.css">
+</head>
+<body>
+    <!-- LOGIN SCREEN
+    <div id="login-screen" class="login-container">
+        LOGIN FORM
+        <div class="login-form" id="login-form">
+            <h2>Iniciar Sesión</h2>
+            <input type="text" id="username" placeholder="Usuario" required>
+            <input type="password" id="password" placeholder="Contraseña" required>
+            <button id="login-btn">Iniciar Sesión</button>
+            <p id="error-message" class="error-message" style="display: none;">Usuario o contraseña incorrecta</p>
+            <p class="toggle-form">¿No tienes cuenta? <button id="go-to-register-btn" class="link-btn">Registrarse</button></p>
+        </div>
+
+        REGISTER FORM
+        <div class="register-form" id="register-form" style="display: none;">
+            <h2>Crear Cuenta</h2>
+            <input type="text" id="new-username" placeholder="Nuevo Usuario" required>
+            <input type="password" id="new-password" placeholder="Nueva Contraseña" required>
+            <input type="password" id="new-password-confirm" placeholder="Confirmar Contraseña" required>
+            <button id="register-btn">Crear Cuenta</button>
+            <p id="register-error-message" class="error-message" style="display: none;"></p>
+            <p class="toggle-form">¿Ya tienes cuenta? <button id="go-to-login-btn" class="link-btn">Iniciar Sesión</button></p>
+        </div>
+    </div>
+    -->
+
+    <!---HEADER-->
+    <header>
+        <div class="header-left">
+            <a href="" class="logo-link"><div class="logo">Crunchyroll</div></a>
+            <nav class="nav-links">
+                <a href=""><div class="nav-item">Novedades</div></a>
+                <a href=""><div class="nav-item">Popular</div></a>
+                <a href=""><div class="nav-item">Simulcasts</div></a>
+                <a href=""><div class="nav-item">Categorías</div></a>
+                <a href=""><div class="nav-item">Juegos</div></a>
+                <a href=""><div class="nav-item">Tienda</div></a>
+                <a href=""><div class="nav-item">Noticias</div></a>
+            </nav>
+        </div>
+
+        <div class="header-right">
+            <a href=""><div class="header-action search-action">Buscar</div></a>
+            <a href=""><div class="header-action bookmark-action">Guardar</div></a>
+            <a href=""><div class="premium-box">PREMIUM</div></a>
+            <a href=""><div class="avatar-box"></div></a>
+        </div>
+    </header>
+    
+    <!---MAIN-->
+    <main>
+        <div class="img-principal">
+            <p class="hero-kicker">Nuevo episodio disponible</p>
+            <img src="imagenes/Cartelera/banner-tensura.webp" class="Titulo" alt="Tensura">
+            <h1>Rimuru y sus aliados vuelven con nuevas amenazas, más magia y una nación de monstruos lista para proteger lo que han construido.</h1>
+            <div class="hero-actions">
+                <button class="watch-btn">Ver ahora</button>
+                <button class="details-btn">Más información</button>
+            </div>
+        </div>
+    
+        <section class="banners-section">
+            <div class="section-heading">
+                <div>
+                    <p>Explorar</p>
+                    <h2>Series recomendadas</h2>
+                </div>
+                <a href="">Ver todo</a>
+            </div>
+            <div class="banners-grid">
+                <div class="banner-module" 
+                data-titulo="Bungo Stray Dogs" 
+                data-fecha-de-creacion="07/04/2016" 
+                data-descripcion="Detectives con habilidades basadas en autores literarios resuelven crímenes sobrenaturales." 
+                data-genero="Acción, Misterio" 
+                data-clasificacion="Seinen" 
+                data-capitulos="61 + Película"
+                ><img src="imagenes/Cartelera/bungo stray dogs.jpg" alt="Bungo Stray Dogs"></div>
+
+                <div class="banner-module" 
+                data-titulo="Cells at Work!" 
+                data-fecha-de-creacion="07/07/2018" 
+                data-descripcion="Una versión antropomórfica de las células del cuerpo humano trabajando para mantenerlo sano." 
+                data-genero="Comedia, Fantasía" 
+                data-clasificacion="Shonen" 
+                data-capitulos="21 + Película"
+                ><img src="imagenes/Cartelera/cells at work.jpg" alt="Cells at Work"></div>
+                
+                <div class="banner-module" 
+                data-titulo="Chainsaw Man" 
+                data-fecha-de-creacion="11/10/2022" 
+                data-descripcion="Denji, un joven fusionado con su perro demonio motosierra, caza demonios para la seguridad pública." 
+                data-genero="Acción, Gore" 
+                data-clasificacion="Shonen" 
+                data-capitulos="12"
+                ><img src="imagenes/Cartelera/chainsawman.webp" alt="Chainsaw Man"></div>
+                
+                <div class="banner-module" 
+                data-titulo="Dan Da Dan" 
+                data-fecha-de-creacion="03/10/2024" 
+                data-descripcion="Dos adolescentes enfrentan aliens y fantasmas tras una apuesta sobre la existencia de lo paranormal." 
+                data-genero="Acción, Comedia" 
+                data-clasificacion="Shonen" 
+                data-capitulos="12"
+                ><img src="imagenes/Cartelera/dan da dan.webp" alt="Dan Da Dan"></div>
+                
+                <div class="banner-module" 
+                data-titulo="Dr. Stone" 
+                data-fecha-de-creacion="05/07/2019" 
+                data-descripcion="Tras una petrificación global, un genio científico busca reconstruir la civilización desde cero." 
+                data-genero="Ciencia Ficción" 
+                data-clasificacion="Shonen" 
+                data-capitulos="58"
+                ><img src="imagenes/Cartelera/dr stone.webp" alt="Dr. Stone"></div>
+                
+                <div class="banner-module" 
+                data-titulo="El Héroe del Escudo" 
+                data-fecha-de-creacion="09/01/2019" 
+                data-descripcion="Naofumi es invocado a otro mundo como el héroe más débil y debe limpiar su nombre." 
+                data-genero="Isekai, Fantasía" 
+                data-clasificacion="Seinen" 
+                data-capitulos="50"
+                ><img src="imagenes/Cartelera/el heroe del escudo.webp" alt="El Héroe del Escudo"></div>
+                
+                <div class="banner-module" 
+                data-titulo="Fire Force" 
+                data-fecha-de-creacion="05/07/2019" 
+                data-descripcion="Equipos de bomberos especiales combaten la combustión humana espontánea y seres de fuego." 
+                data-genero="Acción, Ciencia Ficción" 
+                data-clasificacion="Shonen" 
+                data-capitulos="48"
+                ><img src="imagenes/Cartelera/fireforce.jpg" alt="Fire Force"></div>
+                
+                <div class="banner-module" 
+                data-titulo="Frieren" 
+                data-fecha-de-creacion="29/09/2023" 
+                data-descripcion="Una elfa inmortal emprende un viaje para entender los sentimientos humanos tras la muerte de su compañero." 
+                data-genero="Fantasía, Drama" 
+                data-clasificacion="Shonen" 
+                data-capitulos="28"
+                ><img src="imagenes/Cartelera/frieren.webp" alt="Frieren"></div>
+                
+                <div class="banner-module" 
+                data-titulo="Hell's Paradise" 
+                data-fecha-de-creacion="01/04/2023" 
+                data-descripcion="Un ninja condenado a muerte busca el elixir de la vida en una isla misteriosa." 
+                data-genero="Acción, Dark Fantasy" 
+                data-clasificacion="Shonen" 
+                data-capitulos="13"
+                ><img src="imagenes/Cartelera/hellsparadise.jpg" alt="Hell's Paradise"></div>
+                
+                <div class="banner-module" 
+                data-titulo="Hunter x Hunter" 
+                data-fecha-de-creacion="02/10/2011" 
+                data-descripcion="Gon Freecss busca convertirse en Cazador para encontrar a su padre." 
+                data-genero="Aventura, Acción" 
+                data-clasificacion="Shonen" 
+                data-capitulos="148"
+                ><img src="imagenes/Cartelera/HxH.jpg" alt="Hunter x Hunter"></div>
+                
+                <div class="banner-module" 
+                data-titulo="Jujutsu Kaisen" 
+                data-fecha-de-creacion="03/10/2020" 
+                data-descripcion="Itadori se une a una academia de hechicería para eliminar maldiciones tras ingerir un objeto maldito." 
+                data-genero="Acción, Sobrenatural" 
+                data-clasificacion="Shonen" 
+                data-capitulos="47 + Película"
+                ><img src="imagenes/Cartelera/Jujutsu kaisen.webp" alt="Jujutsu Kaisen"></div>
+                
+                <div class="banner-module" 
+                data-titulo="Los Diarios de la Boticaria" 
+                data-fecha-de-creacion="22/10/2023" 
+                data-descripcion="Maomao utiliza sus conocimientos de medicina para resolver misterios en el palacio imperial." 
+                data-genero="Misterio, Histórico" 
+                data-clasificacion="Seinen" 
+                data-capitulos="24"
+                ><img src="imagenes/Cartelera/los diarios de la buticaria.webp" alt="Los Diarios de la Boticaria"></div>
+                
+                <div class="banner-module" 
+                data-titulo="Mashle" 
+                data-fecha-de-creacion="08/04/2023" 
+                data-descripcion="En un mundo de magia, un joven sin poderes usa su fuerza física bruta para sobrevivir." 
+                data-genero="Comedia, Fantasía" 
+                data-clasificacion="Shonen" 
+                data-capitulos="24"
+                ><img src="imagenes/Cartelera/mashle.webp" alt="Mashle"></div>
+                
+                <div class="banner-module" 
+                data-titulo="My Hero Academia" 
+                data-fecha-de-creacion="03/04/2016" 
+                data-descripcion="Izuku Midoriya nace sin poderes en un mundo de héroes, pero hereda el don del mayor héroe." 
+                data-genero="Acción, Escolar" 
+                data-clasificacion="Shonen" 
+                data-capitulos="159"
+                ><img src="imagenes/Cartelera/my hero academia.webp" alt="My Hero Academia"></div>
+                
+                <div class="banner-module" 
+                data-titulo="Naruto Shippuden" 
+                data-fecha-de-creacion="15/02/2007" 
+                data-descripcion="Naruto regresa tras entrenar para rescatar a Sasuke y enfrentar a Akatsuki." 
+                data-genero="Acción, Ninja" 
+                data-clasificacion="Shonen" 
+                data-capitulos="500"
+                ><img src="imagenes/Cartelera/Naruto Shipuden.webp" alt="Naruto Shipuden"></div>
+                
+                <div class="banner-module" 
+                data-titulo="One Piece" 
+                data-fecha-de-creacion="20/10/1999" 
+                data-descripcion="Luffy y su tripulación navegan en busca del tesoro legendario para ser el Rey de los Piratas." 
+                data-genero="Aventura, Fantasía" 
+                data-clasificacion="Shonen" 
+                data-capitulos="1100+"
+                ><img src="imagenes/Cartelera/onepice.webp" alt="One Piece"></div>
+                
+                <div class="banner-module" 
+                data-titulo="Solo Leveling" 
+                data-fecha-de-creacion="07/01/2024" 
+                data-descripcion="El cazador más débil del mundo obtiene un sistema único que le permite subir de nivel." 
+                data-genero="Acción, Fantasía" 
+                data-clasificacion="Shonen/Seinen" 
+                data-capitulos="12"
+                ><img src="imagenes/Cartelera/solo leveling.webp" alt="Solo Leveling"></div>
+                
+                <div class="banner-module" 
+                data-titulo="Spy x Family" 
+                data-fecha-de-creacion="09/04/2022" 
+                data-descripcion="Un espía, una asesina y una niña telepata forman una familia falsa para una misión." 
+                data-genero="Comedia, Espionaje" 
+                data-clasificacion="Shonen" 
+                data-capitulos="37 + Película"
+                ><img src="imagenes/Cartelera/spy family.webp" alt="Spy Family"></div>
+                
+                <div class="banner-module" 
+                data-titulo="Tanya the Evil" 
+                data-fecha-de-creacion="06/01/2017" 
+                data-descripcion="Un asalariado renace como una niña soldado mágica en un mundo en guerra." 
+                data-genero="Isekai, Bélico" 
+                data-clasificacion="Seinen" 
+                data-capitulos="12 + Película"
+                ><img src="imagenes/Cartelera/tanya.webp" alt="Tanya"></div>
+                
+                <div class="banner-module" 
+                data-titulo="To Be Hero X" 
+                data-fecha-de-creacion="2025" 
+                data-descripcion="Héroes compiten en un mundo donde la creencia de la gente les otorga poder." 
+                data-genero="Acción, Ciencia Ficción" 
+                data-clasificacion="Shonen" 
+                data-capitulos="En emisión"
+                ><img src="imagenes/Cartelera/to be hero x.jpg" alt="To Be Hero X"></div>
+
+                <div class="banner-module" 
+                data-titulo="Black Clover" 
+                data-fecha-de-creacion="03/10/2017" 
+                data-descripcion="Asta, un joven sin magia, busca convertirse en Rey Mago usando un grimorio de anti-magia." 
+                data-genero="Acción, Fantasía" 
+                data-clasificacion="Shonen" 
+                data-capitulos="170"
+                ><img src="imagenes/Cartelera/black-clover.jpeg" alt="Black Clover"></div>
+
+                <div class="banner-module" 
+                data-titulo="Tensura" 
+                data-fecha-de-creacion="02/10/2018" 
+                data-descripcion="Un hombre renace como slime en un mundo de fantasía y crea una nación junto a monstruos y aliados." 
+                data-genero="Isekai, Fantasía" 
+                data-clasificacion="Shonen" 
+                data-capitulos="72+"
+                ><img src="imagenes/Cartelera/banner-tensura.webp" alt="Tensura"></div>
+
+                <div class="banner-module" 
+                data-titulo="Hunter x Hunter 1999" 
+                data-fecha-de-creacion="16/10/1999" 
+                data-descripcion="Gon inicia su viaje para convertirse en cazador y descubrir el paradero de su padre." 
+                data-genero="Aventura, Acción" 
+                data-clasificacion="Shonen" 
+                data-capitulos="62"
+                ><img src="imagenes/Cartelera/hunter-x-hunter-1999.png" alt="Hunter x Hunter 1999"></div>
+
+                <div class="banner-module" 
+                data-titulo="Frieren Especial" 
+                data-fecha-de-creacion="29/09/2023" 
+                data-descripcion="Frieren recuerda su viaje con los héroes mientras aprende a comprender mejor el paso del tiempo." 
+                data-genero="Fantasía, Drama" 
+                data-clasificacion="Shonen" 
+                data-capitulos="Especial"
+                ><img src="imagenes/Cartelera/frieren-especial.webp" alt="Frieren Especial"></div>
+
+                <div class="banner-module" 
+                data-titulo="Saga of Tanya the Evil" 
+                data-fecha-de-creacion="06/01/2017" 
+                data-descripcion="Tanya Degurechaff sobrevive en un mundo bélico usando estrategia, magia y una voluntad implacable." 
+                data-genero="Isekai, Bélico" 
+                data-clasificacion="Seinen" 
+                data-capitulos="12 + Película"
+                ><img src="imagenes/Cartelera/tanya-the-evil.webp" alt="Saga of Tanya the Evil"></div>
+            </div>
+        </section>
+    </main>
+
+    <div class="anime-modal" id="anime-modal" aria-hidden="true">
+        <div class="anime-modal-content">
+            <button class="modal-close-btn" id="modal-close-btn" aria-label="Cerrar ventana">x</button>
+
+            <div class="modal-video-box">
+                <video id="modal-video" autoplay muted loop playsinline>
+                    <source src="imagenes/Videos/frieren-trailer.mp4" type="video/mp4">
+                </video>
+            </div>
+
+            <div class="modal-info-box">
+                <p class="modal-label">Anime seleccionado</p>
+                <h2 id="modal-title"></h2>
+                <p id="modal-description" class="modal-description"></p>
+
+                <div class="modal-data-list">
+                    <div>
+                        <span>Fecha de creacion</span>
+                        <strong id="modal-date"></strong>
+                    </div>
+                    <div>
+                        <span>Genero</span>
+                        <strong id="modal-genre"></strong>
+                    </div>
+                    <div>
+                        <span>Clasificacion</span>
+                        <strong id="modal-rating"></strong>
+                    </div>
+                    <div>
+                        <span>Capitulos</span>
+                        <strong id="modal-episodes"></strong>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="Javascript/crunchyroll.js"></script>
+</body>
+</html>

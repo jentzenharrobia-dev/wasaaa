@@ -1,0 +1,61 @@
+
+    *{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+    }
+
+
+    body{
+        
+        height: 150vh;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    nav{
+        width: 80vw;
+        height: 10vh;
+        background-color: aqua;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 200px;
+        position: fixed;
+        top:0;
+    }
+
+    main{
+        width: 80vw;
+        height: 150vh;
+        background-color: gray;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+    }
+
+    .contenedor{
+        height: 10%;
+        width: 10%;
+        background-color: green;
+    }
+
+    .contenedor div.barralateral{
+        width: 20vw;
+        height: 140vh;
+        background-color: bisque;
+        position: absolute;
+        top: 10vh;
+        left: -40vh;
+        transition: left 2s;
+    }
+
+    .contenedor:hover div.barralateral{
+        left: 0;
+
+    }

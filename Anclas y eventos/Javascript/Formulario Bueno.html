@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+        /* RESET Y ESTILOS BASE */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+
+        body {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+
+        /* CONTENEDOR PRINCIPAL */
+        .estiloProtipo {
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            width: 100%;
+            max-width: 800px; /* Un poco más ancho para las 2 columnas */
+            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+           
+            /* FLEXBOX PARA COLUMNAS */
+            display: flex;
+            flex-wrap: wrap; /* Permite que los elementos pasen a la siguiente línea */
+            gap: 20px;       /* Espaciado entre elementos */
+        }
+
+
+        /* ELEMENTOS HIJOS (2 POR COLUMNA) */
+        /* Calculamos el 50% menos la mitad del gap para que encajen perfecto */
+        .estiloProtipo > label,
+        .estiloProtipo > .field-group {
+            flex: 1 1 calc(50% - 10px);
+            display: flex;
+            flex-direction: column;
+        }
+
+
+        /* Excepción para elementos que ocupen todo el ancho si lo deseas */
+        fieldset, .full-width {
+            flex: 1 1 100% !important;
+        }
+
+
+        /* ESTILO DE LOS INPUTS */
+        input[type="text"],
+        input[type="password"],
+        input[type="number"],
+        input[type="date"],
+        select,
+        textarea {
+            padding: 12px;
+            border: 2px solid #e1e1e1;
+            border-radius: 6px;
+            margin-top: 8px;
+            transition: all 0.3s ease;
+            outline: none;
+        }
+
+
+        /* PSEUDO-CLASES */
+        input:focus {
+            border-color: #2a5298;
+            background-color: #f0f4ff;
+        }
+
+
+        input:required:valid { border-left: 5px solid #2ecc71; }
+        input:required:invalid:not(:placeholder-shown) { border-left: 5px solid #e74c3c; }
+
+
+        /* LIMITAR TEXTAREA */
+        textarea {
+            resize: none;
+            min-height: 100px;
+        }
+
+
+        /* FIELDSETS E INTERIOR */
+        fieldset {
+            border: 1px solid #ddd;
+            padding: 15px;
+            border-radius: 8px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+
+        legend {
+            font-weight: bold;
+            color: #1e3c72;
+            padding: 0 10px;
+        }
+
+
+        .radio-check-group {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-weight: normal;
+            flex: 1 1 calc(33% - 10px); /* 3 por línea en radios */
+        }
+
+
+        /* BOTONES */
+        .buttons-container {
+            flex: 1 1 100%;
+            display: flex;
+            gap: 10px;
+        }
+
+
+        button {
+            flex: 1;
+            padding: 15px;
+            border: none;
+            border-radius: 6px;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            text-transform: uppercase;
+        }
+
+
+        button[type="submit"] { background: #2ecc71; }
+        button[type="reset"] { background: #95a5a6; }
+
+
+
+
+        #vinculo{
+            display: none;
+        }
+        .mostrarPanelOculto{
+            padding: 15px 10px;
+            background-color: #2ecc71;
+            color: #ffffff;
+            cursor: pointer;
+            text-align: center;
+            font-weight: bold;
+        }
+        .panelOculto{
+            width: 40%;
+            height: 100%;
+            background-color: #e93a1b;
+            position: fixed;
+            top:0;
+            left: -44%;
+            border-radius: 0 20px 20px 0;
+            box-shadow: 10px 0 10px black;
+            transition: all 0.4s ;
+             padding: 20px 20px;
+             display: flex;
+             align-items: center;
+        }
+
+
+        input#vinculo:checked ~ .panelOculto{
+            left: 0;
+        }
+
+
+        .panelOculto > section{
+            width: 100%;
+            height: 70%;
+            background-color: #2ecc71;
+            border-radius: 6%;
+            overflow: hidden;
+            box-sizing: border-box;
+                   box-shadow: 0px 0px 15px black;
+
+
+        }
+        .panelOculto > section > input{
+            display: none;
+        }
+        .divPestanas{
+            height: 10%;
+            background-color:#ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap:10px;
+        }
+        .divPestanas label{
+            text-align: center;
+            width: 30%;
+            border-bottom: 2px solid black;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 18px;
+            font-weight: bold;
+            text-shadow: 0px 0px 1px black;
+        }
+        .divContenido{
+            height: 90%;
+            background-color: #95a5a6;
+        }
+        .panelContenido{
+            width: 100%;
+            height: 100%;
+            display: none;
+            background-size: 80% 80%;
+            background-position: center;
+            background-repeat: no-repeat;
+     
+        }
+        #pestana1:checked ~ .divContenido #panel1{ display:block;}
+        #pestana2:checked ~ .divContenido #panel2{ display:block;}
+        #pestana3:checked ~ .divContenido #panel3{ display:block;}
+
+
+        #panel1{
+            background-image:url(imagenes/Bertín-Osborne.jpg) ;
+         
+        }
+        #panel2{
+            background-image:url(imagenes/banderas.avif) ;
+           
+        }
+        #panel3{
+            background-image:url(imagenes/bustamante.avif) ;
+           
+        }
+    </style>
+<body>
+    <!--Un formulario no es solo el concepto que conocemos.
+    Un formulario lo utilizaremos para pedir información pero...
+    ...también para jugar con partes de nuestra web
+    Action: indica la ruta a la que se envia el formulario
+    Method: encriptación de la información
+    -->
+    <form action="direcciónDeEnvio" method="post" id="formuEjemplo" class="estiloProtipo">
+        <!--Etiqueta label: Es el texto que acompaña a un elemento de formulario
+        Las etiquetas label se vinculan a un control gracias el atributo for
+        -->
+        <label for="inp_Nombre">Nombre:</label>
+        <input id="inp_Nombre" type="text" value="Perro Sanses" name="Nombre"
+        placeholder="Escribre el nombre..." required
+        maxlength="8" minlength="3" tabindex="1" autofocus>
+       
+        <input id="vinculo" type="checkbox">
+        <label for="vinculo" class="mostrarPanelOculto">Mostrar</label>
+        <div class="panelOculto">
+            <section>
+                <input type="radio" name="pestanas" id="pestana1" checked>
+                <input type="radio" name="pestanas" id="pestana2">
+                <input type="radio" name="pestanas" id="pestana3">
+               
+                <div class="divPestanas">
+                    <label for="pestana1">Bertín</label>
+                    <label for="pestana2">Banderas</label>
+                    <label for="pestana3">Bustamante</label>
+                </div>
+                <div class="divContenido">
+                    <article class="panelContenido" id="panel1"></article>
+                    <article class="panelContenido" id="panel2"></article>
+                    <article class="panelContenido" id="panel3"></article>
+                </div>
+            </section>
+        </div>
+        <!--Campo simple de tipo texto
+            En type indicamos el tipo.
+            Placeholder nos muestra el texto guía. Desde CSS lo editaremos con ::placeholder{}
+            Value que es lugar en donde se guarda la información tecleada
+            Name es tan solo el nombre del objeto
+            Required es para indicar que es obligatorio
+            Podemos cambiar el estilo del requerido incorrecto con:
+            input:required:invalid{}  input:required:valid{}
+            maxlength y minlength para delimitar el número de letras
+            tabindex orden de tabulación entre los objetos
+            autofocus: autamaticamente da el foco
+            :focus para dar estilo cuando está seleccionado
+            readonly y disabled para evitar la interacción con el usuario
+        -->
+        <label>Contraseña  
+            <input type="password" value="" name="Contrasena" tabindex="2">
+        </label>
+        <label>Edad  
+            <input type="number" value="" name="Contrasena" tabindex="2">
+        </label>
+        <!--Input de tipo slider. Barra de rangos-->
+        <label for="inpTalla">Talla</label>
+        <input id="inpTalla" type="range" min="30" max="80" step="1" value="">
+        <!--
+            Fieldset que sirve para agrupa o delimitar lor elementos del formulario
+            Además fieldset puede estar fuera de un formulario pero vincularlo con el atributo form
+            Lo vincularemos con el id del propio Form
+            Legend que es el título de una sección en concreto
+        -->
+        <fieldset form="formuEjemplo">
+            <legend>Datos OTROS</legend>
+            <!--
+                Radio nos permite elegir un elemento dentro de unas opciones.
+                Para que los radios solo sean monoseleccionables tenemos que poner para todos el mismo NAME
+                Checked sirve para dejar uno seleccionado
+                -->
+             <label for="inpPerroAgua">Perro de aguas</label>
+             <input type="radio" value="PERRO DE AGUAS"
+                    name="opcionPerros" id="inpPerroAgua" checked>
+
+
+             <label for="inpPerroPluto">Perro Pluto</label>
+             <input type="radio" value="PERRO PLUTO"
+                    name="opcionPerros" id="inpPerroPluto">
+
+
+             <label for="inpPerroVerde">Perro verde</label>
+             <input type="radio" value="PERRO VERDE"
+                    name="opcionPerros" id="inpPerroVerde">
+             <label>Fecha:
+                <input type="date" value="" name="fecha">
+             </label>
+             
+             
+             <fieldset form="formuEjemplo">
+                <legend>Más datos</legend>
+                <!--Checkbox es como el radio pero con selección múltiple-->
+                <label>Objeto 1</label>
+                <input type="checkbox" value="seleccionObjeto1"
+                        name="catalagoOpciones" checked>
+                <label>Objeto 2</label>
+                <input type="checkbox" value="seleccionObjeto2"
+                        name="catalagoOpciones" checked>
+                <label>Objeto 3</label>
+                <input type="checkbox" value="seleccionObjeto3"
+                        name="catalagoOpciones" checked>
+            </fieldset>      
+        </fieldset>
+
+
+        <fieldset form="formuEjemplo">
+            <legend>Lista desplegable</legend>
+            <label>Elementos seleccionables</label>
+            <!--Select nos permite hacer una lista desplegable
+                Cada opción se estipula en una etiqueta option
+                Cada option tiene su value además del texto que se muestra
+                Podemos agrupar opciones metiéndolas dentro de una optgroup
+                Selected indica que una opción quedará seleccionada
+            -->
+            <select name="opciones" multiple>
+                <option value="ninguna" selected>...</option>
+                <optgroup label="Ciudades">
+                    <option value="Bilbao">Bilbao</option>
+                    <option value="Madrid">Madrid</option>
+                    <option value="Otra Madrid">Otra Madrid</option>
+                </optgroup>
+                <optgroup label="oTRAS Ciudades">
+                    <option value="Vitoria">Vitoria</option>
+                    <option value="Valencia">Valencia</option>
+                    <option value="Valladolid">Valladolid</option>
+                </optgroup>
+            </select>
+            <!--Text area cuadro grande de texto para indicar o desarrolar una opinión-->
+            <label for="txtOpinion">Danos tu opinión</label>
+            <textarea style="textarea{resize: none;}" id="txtOpinion" value="" name="Opinion"
+                    tabindex="5" rows="10" cols="40">
+                    </textarea>
+        </fieldset>
+        <!--Input para enviar la información del formulario-->
+        <button type="submit">Enviar información</button>
+        <button type="reset">Limpiar información</button>
+    </form>
+    <script>
+        let nombreUsuario = document.getElementById("inp_Nombre");
+        alert(nombreUsuario.getAttribute("value"));
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<style>
+    *{
+     margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        text-decoration: none;
+        list-style: none;
+    }
+
+    body{
+        width: 650px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top:0;
+    }
+
+    section{
+        width: 100%;
+        height: 200px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        background-color: aqua;
+    }
+
+    section article{
+        width: 18%;
+        height: 50%;
+        background-color: orange;
+
+    }
+
+    section.segundo article#cambio{
+        border-radius: 20px 0px 20px 0px;
+    }
+    
+    section *{
+        color: white;
+        font-weight: bold;
+        text-align: center;
+        font-size: 14px;
+    }
+
+    section article#cambio{
+        order: 0;
+    }
+
+    section.segundo article:nth-child(3){
+        height: 60%;
+        background-color: black;
+    }
+
+    section.primero article#cambio p:nth-child(2){
+        color: green;
+
+    }
+    section.segundo:hover article:nth-child(2){
+        border-radius: 100%;
+        box-shadow: 10px 3px 10px black;
+
+    }
+
+    section.primero:active *:nth-child(5){
+        opacity: 0.1;
+    }
+
+    section.segundo:hover{
+        flex-direction: column;
+    }
+
+    section.segundo:hover article{
+        width: 80%;
+        height: 18%;
+    }
+    </style>
+
+    <section class="primero">
+        <article><p>TEXTO EJEMPLO</p></article>
+        <article></article>
+        <article id="cambio">
+            <P>TEXTO EJEMPLO</P> 
+            <P>TEXTO EJEMPLO</P>
+            <P>TEXTO EJEMPLO</P>
+            <span style='font-size:100px;'>&#129397;</span>
+            <p>I will display &#129397;</p>
+            <p>I will display &#x1F975;</p>
+        </article>
+        <article></article>0.................0
+        .
+        <article></article>
+    </section>
+
+    <section class="segundo">
+        <article id="cambio"></article>
+        <article></article>
+        <article></article>
+        <article></article>
+        <article><p>TEXTO EJEMPLO</p></article>
+    </section>
+
+</body>
+</html>

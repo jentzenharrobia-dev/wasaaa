@@ -1,0 +1,148 @@
+*{
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+    list-style: none;
+}
+
+    @font-face {
+    font-family:"coito";
+    src: url(/fonts/IosevkaCharon-Medium.ttf);
+    }
+        
+    @font-face {
+    font-family:"CoitoSupremo";
+    src: url(/fonts/Montserrat/static/Montserrat-Medium.ttf);
+    }
+
+header{
+    height: 10vh;
+    background-color: #0A1128;
+}
+
+main{
+    height: 90vh;
+    background-color: #294C60;
+    display: flex;
+    flex-direction: column;
+}
+
+.arriba{
+    flex: 1;
+    background-color: #ADB6C4;
+    display: flex;
+    min-height: 0;
+}
+
+.catalogo{
+    width: 60%;
+    background-color:#0A1128;
+    padding: 30px 10px;
+    overflow-y: auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding-left: 40px;
+    border: #B58921 2px solid;
+}
+.catalogo::-webkit-scrollbar {
+  width: 10px;
+}
+
+.catalogo::-webkit-scrollbar-track {
+  background: linear-gradient(#1a1a1a);     
+}
+
+.catalogo::-webkit-scrollbar-thumb {
+  background: #F7F7F2;      
+  border-radius: 10px;
+}
+
+.catalogo::-webkit-scrollbar-thumb:hover {
+  background: #F7F7F2;      
+}
+
+.catalogo img{
+    width: 250px;
+    height: 450px;
+    min-width: 100px;
+    min-height: 260px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+    border-radius: 20px;
+    border: 2px solid #B58921;
+}
+
+.catalogo img:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.5);
+    filter: brightness(1.15);
+}
+
+
+.abajo{
+    flex: 0.15;
+    background-color:#0A1128;
+}
+
+.detalles{
+    width: 40%;
+    background-color: #0A1128;
+    padding: 10px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+    padding-left: 40px;
+    color: #ffffff;
+    border: 
+    #B58921 2px solid;
+    box-shadow: #B58921 0px 0px 10px;
+}
+
+.detalles img{
+    width: 250px;
+    height: 450px;
+    min-width: 100px;
+    min-height: 260px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+    border: 2px solid #B58921;
+}
+
+.detalles img:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.5);
+    filter: brightness(1.15);
+}
+
+.detalles img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+.detalles h2{
+    font-family: "coito";
+    font-size: 24px;
+    color: #B58921;
+}
+
+.detalles p{
+    font-family: "CoitoSupremo";
+    font-size: 16px;
+    color: #ffffff;
+}
+
+.abajo{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    max-height: 120px;
+    gap: 20px;
+}
+
+.abajo img{
+    height: 80%;
+    }

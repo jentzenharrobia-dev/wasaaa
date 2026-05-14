@@ -1,0 +1,816 @@
+    *{
+        margin: 0;
+        padding: 0;
+        text-decoration: none;
+        color: black;
+        text-align: center;
+        box-sizing: none;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        color: #84613d;
+        position: relative;
+        align-items: center;
+        display: space-evenly;   
+        justify-content: center;
+        
+    }
+
+
+
+
+    /*Header*/
+    #promo1{
+        width: 100%;
+        text-align: center;
+        background-color: #6B4423;
+        font: bold;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        ;
+        z-index: 999999;
+    }
+
+    #promo2{
+        background-color:rgb(155, 104, 37);
+        position: sticky;
+    }
+
+    nav{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 20px;
+
+    }
+
+    .header-logo{
+        margin-left: 30px;
+        flex: 0.2;
+    }
+
+    .header-opciones{
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        gap: 50px;
+        font-size:18px ;
+ 
+    }
+
+    .header-botones{ 
+        flex:0.15;;
+    }
+
+    /*VIDEO*/
+
+    div.contenedor-video{
+        width: 100%;
+        height: 600px;
+        background-color: rgba(128, 128, 128, 0);
+        position: relative;
+    }
+
+
+    .frente{
+        background-color: rgba(128, 128, 128, 0);
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    main{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        overflow: hidden;
+        
+    }
+    
+    video{
+        width: 100%;
+        height: 600px;
+    }
+
+    h1 {
+        text-align: center;
+        text-decoration: none;
+        font:bold;
+        color: aliceblue;
+        margin-left: 240px;
+    }
+
+    p{
+        text-align: center;
+        text-decoration: none;
+        font: bold;
+        color: aliceblue;
+    }
+
+    div.contenedor-video div.frente h1{
+        font-size: 50px;
+        margin-bottom: 20px;
+        text-shadow: black 1px 0 10px;
+        margin-right: 250px;
+    }
+
+    /*BARRA INFO*/
+    .barrainfo{
+        width: 100%;
+        background-color:#FDEBD0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+        gap: 150px;
+        margin-top: -5px;
+    }
+
+    .barrainfo p{   
+
+        flex: 1;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        padding-right: 10px;
+        color: #84613d;
+        font-size: large;
+    }
+
+
+    /*CAJAS H1 "POR DONDE EMPEZAR"*/
+
+    .pordonde{
+        margin-top: 70px;
+        margin-bottom: 70px;
+        padding: 10px;
+        font:bold;
+        color:#614428;
+        margin-right: 250px;
+    }
+
+    section.cajas-selectoras{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        gap: 2%;
+        z-index: 0;
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+
+    section.cajas-selectoras article{
+        width: 18%;
+        height: 500px;
+        margin-bottom: 200px;
+        position: relative;
+        background-color: rgba(0, 128, 0, 0);
+        overflow: hidden;
+        border-radius: 10px;
+    }
+
+    section.cajas-selectoras article div{
+        height: 100%;
+        width: 100%;
+        background-color: rgba(128, 128, 128, 0);
+        position:absolute;
+        top: 0;
+        left: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px;
+    }
+
+
+    section.cajas-selectoras article div img{
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -10;
+        height: 100%;
+        transform: scale(1);
+        transition: all 1s;
+        border-radius: 10px;
+    }
+    
+    section.cajas-selectoras article:hover div img{
+      transform: scale(1.1);
+    }
+
+    section.cajas-selectoras article div h1{
+        transform: translate(-125px);
+        text-align: center;
+        text-shadow: black 1px 0 10px;
+    }
+
+  /*CAJAS DE LOS VIDEOS CON TEXTO ABAJO*/
+
+
+    section.cajas-videos{
+        width: 100%;
+        background-color: #FFF9E9;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+    }
+
+
+    section.cajas-videos article video{
+        width: 100%;
+        margin-bottom: -150px;
+        margin-top: -150px;
+        border-radius: 10px;
+    }
+
+
+    section.cajas-videos article{
+        margin-top: 50px;
+        width: 24%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+
+    section.cajas-videos article h3{
+        padding-top: 30px;
+        text-align: justify;
+        font-size: 24px;
+    }
+
+
+    section.cajas-videos article p{
+        padding-top: 10px;
+        padding-bottom: 100px;
+        text-align: center;
+        color: #84613d;
+        font-size: 18px;
+    }
+
+
+
+    /*Seccion Velas que son chimenea*/
+
+    section.section-velas-chimenea{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        position: relative;
+    }
+
+    section.section-velas-chimenea p{
+        color:#6B4423;
+        font-size: 20px;
+    }
+
+    section.section-velas-chimenea img{
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+    }
+
+    article.velas-chimenea1{
+        width:50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    article.velas-chimenea1 img{
+        width: 80%;
+        height: 80%;
+        border-radius: 10px;
+        position: sticky;
+        top: 0;
+        left: 0;
+    }
+
+    article.velas-chimenea2{
+        width:50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 30px;
+        padding-top: 70px;
+        padding-bottom: 70px;
+    }
+
+    .chimenea-div-principal{
+        width: 40%;
+        background-color: rgba(128, 128, 128, 0);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    .chimenea-div-principal div{
+        width: 100%;
+        height: 450px;
+        border-radius: 10px;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .chimenea-div-principal div img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 10px;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    .chimenea-div-principal div img.img-principal{
+        opacity: 1;
+        transition: opacity 0.6s ease;
+    }
+
+    .chimenea-div-principal div img.img-hover{
+        opacity: 0;
+        transition: opacity 0.6s ease;
+    }
+
+    .chimenea-div-principal div:hover img.img-principal{
+        opacity: 0;
+    }
+
+    .chimenea-div-principal div:hover img.img-hover{
+        opacity: 1;
+    }
+
+    /*SisuSouls*/
+
+
+    h1.sisusouls{
+        margin-top: 100px;
+        margin-bottom: 50px;
+        font-weight: 900;
+        font-size: 50px;
+        color: #614428;
+        margin-right: 150px;
+    }
+
+    section.sisusouls-section-exterior{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 2%;
+        background-color: #FDEBD0;
+    }
+
+    section.sisusouls-section-exterior section.sisusouls-section-interior{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        gap: 2%;
+        background-color: rgba(128, 128, 128, 0);
+
+    }
+    
+    section.sisusouls-section-exterior section.sisusouls-section-interior article{
+        width: 14%;
+        height: 600px;
+        margin-bottom: 20px;
+        margin-top: 10px;
+        background-color: rgba(0, 128, 0, 0);
+        border-radius: 10px;
+    }
+    
+    section.sisusouls-section-exterior img.sisusouls-imagenes{
+        width: 100%;
+        height: 40%;
+        border-radius: 10px;
+    }
+
+    section.sisusouls-section-exterior article p{
+        padding: 10px;
+        font: bold;
+        color: #000000;
+        text-align: left;
+    }
+
+    section.sisusouls-section-exterior article p.p-nombre{
+        font-size: 20px;
+    }
+
+    .estrella {
+    color: #84613d; 
+    font-size: 25px;
+    }
+
+
+
+    /*Section de Descubrir Set*/
+    section.descubrir-set{
+        width: 100%;
+        margin-top: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        gap: 2%;
+    }
+
+    section.descubrir-set article.descubrir-set-texto p,h2{
+        text-align: left;
+        margin-left: 270px;
+    }
+
+        section.descubrir-set article.descubrir-set-texto p{
+        color: #84613d;
+        margin-top: 20px;
+    }
+
+    section.descubrir-set article.descubrir-set-texto{
+        width: 45%;
+        height: 400px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        text-align: left;
+        background-color: rgba(128, 128, 128, 0);
+        
+    }
+
+    section.descubrir-set article.descubrir-set-texto h1{
+        font-size: 35px;
+        color:#614428;
+        margin-bottom: 30px;
+        text-align: center;
+        margin-left: 0;
+    }
+
+    section.descubrir-set article.descubrir-set-texto h2{
+        font-size: 25px;
+        color:#614428;
+    }
+
+    .descubrir-set-parrafos{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        width: 75%;
+    }
+
+    .descubrir-set-parrafos p {
+        margin: 0;
+        padding: 0;
+    }
+
+    .boton-descubrir {
+        display: inline-block;
+        background-color: #C4A474;
+        color: white;
+        padding: 12px 30px;
+        border-radius: 25px;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 14px;
+        letter-spacing: 1px;
+        margin-top: 20px;
+        margin-left: 270px;
+        transition: background-color 0.3s ease;
+    }
+
+    .boton-descubrir:hover {
+        background-color: #B39360;
+    }
+
+
+    section.descubrir-set article.descubrir-set-imagenes{
+        width: 45%;
+        height: 700px;
+        background-color:#fdebd000;
+        position: relative;
+        transform: translate(-200px,0);
+    }
+
+    section.descubrir-set article.descubrir-set-imagenes img.imagen-1{
+        width: 60%;
+        height: 80%;
+        border-radius: 10px;
+        margin-top: 100px;
+        
+    }
+    
+    section.descubrir-set article.descubrir-set-imagenes img.imagen-1:hover{
+        transform: scale(1.05);
+        transition: all 1s;
+    }
+
+    section.descubrir-set article.descubrir-set-imagenes img.imagen-2{
+        width: 30%;
+        height: 40%;
+        padding: 200px;
+        border-radius: 10px;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        transform: scale(1.0);
+        z-index: 9999;
+    }
+
+    section.descubrir-set article.descubrir-set-imagenes img.imagen-2:hover{
+        transform: scale(1.05);
+        transition: all 1s;
+    }
+
+
+
+
+    /*SECTION ELIGE TU VIBRA*/
+
+    h1.elige-tu-vibra{
+        width: 100%;
+        margin: 100px 0 50px 0;
+        padding: 20px 0;
+        font-weight: 900;
+        font-size: 50px;
+        background-color: #C4A474;
+        color: white;
+        text-align: center;
+    }
+
+    h1.colecciones11{
+        margin-bottom: 50px;
+        font-weight: 900;
+        font-size: 35px;
+        color: #614428;
+        margin-right: 240px;
+        font: bold;
+    }
+
+    section.section-vibra{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        gap: 1%;
+        padding: 40px 20px;
+    }
+
+    .caja-velas-4 {
+        position: relative;
+        width: 22%;
+        height: 600px;
+        border-radius: 10px;
+        overflow: hidden;
+        cursor: pointer;
+    }
+
+    .caja-velas-4 a {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: block;
+        overflow: hidden;
+        border-radius: 10px;
+    }
+
+    .caja-velas-4 img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        transition: transform 0.3s ease;
+    }
+
+    .caja-velas-4:hover img {
+        transform: scale(1.1);
+    }
+
+    .panel-transparente {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(transparent, rgba(0, 0, 0, 0.4));
+        color: white;
+        padding: 20px;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 10;
+    }
+
+    .panel-transparente h2 {
+        margin: 0;
+        font-size: 18px;
+        font-weight: bold;
+        color: white;
+        text-shadow: 1px 1px 1px rgba(0, 0, 0, 1);
+    }
+
+
+    /*Sisu Filosofia*/
+
+    section.sisu-filosofia{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        gap: 5%;
+        margin-top: 100px;
+        background-color: #CD9B70;
+        padding: 60px ,0; 
+    }
+
+    section.sisu-filosofia article.sisu-filo-1{
+        width: 40%;
+        height: 500px;
+        background-color: transparent;
+    }
+
+    section.sisu-filosofia article.sisu-filo-1 img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 10px;
+    }
+
+    section.sisu-filosofia article.sisu-filo-2{
+        width: 45%;
+        color: white;
+    }
+
+    .filosofia-label{
+        font-size: 14px;
+        font-weight: bold;
+        letter-spacing: 2px;
+        margin: 0 0 20px 0;
+        text-align: left;
+    }
+
+    section.sisu-filosofia h1{
+        font-size: 60px;
+        font-weight: 900;
+        margin: 0 0 30px 0;
+        color: white;
+        text-align: left;
+        text-decoration: none;
+    }
+
+    section.sisu-filosofia p{
+        font-size: 16px;
+        line-height: 1.6;
+        margin: 0 0 15px 0;
+        color: white;
+        text-align: left;
+    }
+
+    section.sisu-filosofia strong{
+        color: white;
+        font-weight: bold;
+    }
+
+    .boton-filosofia{
+        display: inline-block;
+        border: 2px solid white;
+        color: white;
+        padding: 12px 30px;
+        border-radius: 5px;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 14px;
+        letter-spacing: 1px;
+        margin-top: 20px;
+        transition: all 0.3s ease;
+    }
+
+    .boton-filosofia:hover{
+        background-color: white;
+        color: #C4A474;
+    }
+
+
+    /* Footer */
+    .site-footer{
+        background-color: #FDEBD0;
+        padding: 60px 20px;
+        color: #C4A474;
+    }
+
+
+    .footer-container{
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        gap: 40px;
+        align-items: flex-start;
+        justify-content: space-between;
+    }
+
+    .footer-left{
+        flex: 1 1 220px;
+    }
+
+    .footer-logo{
+        width: 180px;
+        display: block;
+        margin-bottom: 18px;
+    }
+
+    /* footer-top social removed (moved to footer-bottom) */
+
+    .footer-links{
+        flex: 2 1 600px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+        align-items: start; /* ensure columns align to top */
+    }
+
+    .footer-links .col{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start; /* keep items at top so titles align */
+    }
+
+    .footer-links h4{
+        margin: 0 0 12px 0;
+        color: #614428;
+        font-size: 16px;
+        font-weight: 800;
+    }
+
+    .footer-links a{
+        display: block;
+        color: #C4A474;
+        text-decoration: none;
+        margin: 8px 0;
+        font-size: 14px;
+    }
+
+    .footer-right{
+        flex: 1 1 220px;
+        text-align: right;
+        color: #C4A474;
+    }
+
+    .footer-country{
+        margin-bottom: 18px;
+    }
+
+    .footer-copyright{
+        font-size: 13px;
+        opacity: 0.8;
+    }
+
+    @media (max-width: 900px){
+        .footer-container{flex-direction: column;align-items:flex-start}
+        .footer-right{text-align:left;margin-top:20px}
+        .footer-links{grid-template-columns: repeat(2, 1fr);width:100%}
+    }
+
+    /* footer-bottom (separate row) */
+    .footer-bottom{
+        max-width: 1200px;
+        margin: 24px auto 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 20px;
+        gap: 20px;
+    }
+
+    .footer-bottom-left{flex:1}
+    .footer-bottom-right{flex:1;text-align:right;color:#C4A474}
+
+    .footer-socials{display:flex;gap:10px;align-items:center}
+    .footer-socials .social{display:inline-block;width:34px;height:34px;border-radius:6px;overflow:hidden;background:#fff;padding:4px}
+    .footer-socials .social-img{width:100%;height:100%;object-fit:contain;display:block}
+
+    @media (max-width:900px){
+        .footer-bottom{flex-direction:column;align-items:flex-start}
+        .footer-bottom-right{text-align:left;margin-top:12px}
+    }
+
+
+
