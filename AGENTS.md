@@ -2,16 +2,14 @@
 
 ## Project structure
 
-- Entry point: `Anclas y eventos/index.html`
-- CSS: `Anclas y eventos/CSS/`
-- JS: `Anclas y eventos/Javascript/`
-- Images: `Anclas y eventos/imagenes/`
-- Other `.html` files in `Anclas y eventos/` are standalone practice exercises
+- Entry point: `index.html` (Crunchyroll clone)
+- CSS in `CSS/`, JS in `Javascript/`, images in `imagenes/`
+- Other `.html` files at root are standalone practice exercises
 
 ## Preview
 
-Open `Anclas y eventos/index.html` in a browser, or use VS Code Live Server. Chrome debug config exists at `.vscode/launch.json` (localhost:8080).
+Open `index.html` in a browser. GitHub Pages: https://jentzenharrobia-dev.github.io/wasaaa/
 
 ## No build tooling
 
-Vanilla HTML/CSS/JS — no package.json, no bundler, no tests, no linter, no typechecker.
+Vanilla HTML/CSS/JS — no package.json, no bundler, no tests, no linter.

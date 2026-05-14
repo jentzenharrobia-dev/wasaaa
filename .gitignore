@@ -1,2 +1,6 @@
 .vscode/
 *.code-workspace
+# Archivos grandes que exceden el límite de GitHub
+imagenes/Videos/draw.io-29.3.6-windows-installer.exe
+imagenes/Videos/huntexhunterAMV.mp4
+imagenes/Videos/YTDown.com_YouTube_Symphonic-Suite-Hunter-x-Hunter-7-OSTs-T_Media_sNif-Y0_7-U_001_720p.mp4

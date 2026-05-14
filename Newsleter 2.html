@@ -14,24 +14,159 @@
         list-style: none;
 }
  body{
-        height: 5000px;
-        width: 1920px;
-        margin-left: auto;
-        margin-right: auto;
-        margin-top: auto;
-        margin-bottom: auto;
-        background-image: url()
+        height: 2000px;
+        width: 650px;
+        margin-left:auto;
+        margin-right:auto;
+        margin-top: 0;
+        background-image: url(images/fondo.png);
+        background-size: 100%;
+
     }
-.caja{
-    height: ;
+.Titulo{
+    height: 438px;
+    width: 650px;
+    border: 1px black;
+    background-size: contain;
+    background-image: url(images/Hunter_x_hunter.png);
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
+.caja{
+    width: auto;
+    height: auto;
+    border: 1px solid black;
 
+    
+}
+    
+#ImagenUno{
+    width: 650px;
+    height: 400px;
+    background-image: url(images/hxh1.webp);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    justify-content: center;
+    align-items: center;
+}
 
+#info{
+    width: 650px;
+    height: 500px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+.foto{
+    height: 150px;
+    width: 600px;
+    border: 1px;
+    border-color: black;
+    border-radius: 20px;
+    background-color: blueviolet;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#gon{
+    height: 150px;
+    width: 150px;
+    border-radius: 10px;
+    background-image: url(images/gon.webp);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.textoGon{
+   width: 450px;
+   height: 150px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+
+}
+
+#killua{
+    height: 150px;
+    width: 150px;
+    border-radius: 10px;
+    background-image: url(images/killua.webp);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.textokillua{
+    width: 450px;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#hisoka{
+    height: 150px;
+    width: 150px;
+    border-radius: 10px;
+    background-image: url(images/hisoka.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.textohisoka{
+    width: 450px;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.espacioblanco{
+    width: 400px;
+}
+
+#video{
+    height: 300px;
+    width: 650px;
+    background-color: aqua;
+}
 </style>
 <body>
-
-    <section class="caja" id="grande" ></section>
+    <section class="Titulo" id="" ></section>
+    <section class="caja" id="ImagenUno">  </section>
+       
     
+    <section class="caja" id="info">
+        <article class="foto" >
+            <div id="gon"> </div>
+            <div class="textoGon">
+                <p class="espacioblanco">iciatis? Quidem dignissimos maxime temporibus ratione itaque, in eos esse ea et ducimus, consectetur soluta.
+                </p>
+            </div>
+        </article>
+        <article class="foto" >
+            <div id="killua"></div>
+            <div class="textokillua">
+                <p class="espacioblanco"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam asperiores pariatur aperiam voluptatum iste. Facilis, earum esse maiores exercitationem veniam sapiente, dolore magnam accusantium eaque ullam blanditiis minima soluta voluptatibus?
+                </p>
+            </div>
+        </article>
+        <article class="foto">
+            <div id="hisoka"></div>
+            <div class="textohisoka">
+                <p class="espacioblanco"> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis, nobis unde! Sequi magni, eos error repellendus quo consequuntur labore rerum sint, dignissimos dolorum officia nobis totam, quasi provident esse ab?
+                </p>
+            </div>
+        </article>
+    </section>
+
+    <section class="caja" id="video">
+        
+    </section>
 </body>
 </html>
