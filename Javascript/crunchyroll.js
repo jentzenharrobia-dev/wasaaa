@@ -85,6 +85,18 @@ document.addEventListener('DOMContentLoaded', function() {
     };
     const fallbackVideo = videosBasePath + 'frieren-trailer.mp4';
 
+    // Elementos de la sección de capítulos
+    const chaptersList = document.getElementById('chapters-list');
+    const uploadChapterBtn = document.getElementById('upload-chapter-btn');
+    const uploadForm = document.getElementById('upload-form');
+    const chapterTitleInput = document.getElementById('chapter-title-input');
+    const chapterVideoInput = document.getElementById('chapter-video-input');
+    const saveChapterBtn = document.getElementById('save-chapter-btn');
+    const cancelChapterBtn = document.getElementById('cancel-chapter-btn');
+
+    let currentUser = null;
+    let db = null;
+
     // ============ INICIALIZACIÓN ============
     
     // Crea la lista de usuarios si no existe (localStorage)
@@ -112,6 +124,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
         if (validateLogin(username, password)) {
             errorMessage.style.display = 'none';
+            currentUser = username;
+            localStorage.setItem('currentUser', username);
             showMainContent();
         } else {
             errorMessage.style.display = 'block';
@@ -172,6 +186,72 @@ document.addEventListener('DOMContentLoaded', function() {
 
     initializeAnimeModal();
 
+    initializeChapters();
+
+    uploadChapterBtn.addEventListener('click', function() {
+        uploadForm.style.display = 'block';
+        uploadChapterBtn.style.display = 'none';
+        chapterTitleInput.focus();
+    });
+
+    cancelChapterBtn.addEventListener('click', function() {
+        uploadForm.style.display = 'none';
+        uploadChapterBtn.style.display = 'inline-block';
+        chapterTitleInput.value = '';
+        chapterVideoInput.value = '';
+    });
+
+    saveChapterBtn.addEventListener('click', function() {
+        var title = chapterTitleInput.value.trim();
+        if (!title) {
+            alert('Escribe un nombre para el capítulo.');
+            return;
+        }
+        var animeTitle = document.getElementById('modal-title').textContent;
+        if (!animeTitle) return;
+
+        var chapters = JSON.parse(localStorage.getItem('chapters')) || {};
+        if (!chapters[animeTitle]) {
+            chapters[animeTitle] = [];
+        }
+        var now = new Date();
+        var dateStr = now.toLocaleDateString('es-ES', {
+            day: '2-digit',
+            month: '2-digit',
+            year: 'numeric'
+        });
+
+        var chapterEntry = {
+            title: title,
+            date: dateStr,
+            uploadedBy: localStorage.getItem('currentUser') || 'Anónimo'
+        };
+
+        var file = chapterVideoInput.files[0];
+        if (file) {
+            var videoId = animeTitle + '-' + Date.now();
+            chapterEntry.videoId = videoId;
+            saveVideoToDB(file, videoId).then(function() {
+                chapters[animeTitle].push(chapterEntry);
+                localStorage.setItem('chapters', JSON.stringify(chapters));
+                resetUploadForm();
+                renderChapters(animeTitle);
+            });
+        } else {
+            chapters[animeTitle].push(chapterEntry);
+            localStorage.setItem('chapters', JSON.stringify(chapters));
+            resetUploadForm();
+            renderChapters(animeTitle);
+        }
+    });
+
+    function resetUploadForm() {
+        chapterTitleInput.value = '';
+        chapterVideoInput.value = '';
+        uploadForm.style.display = 'none';
+        uploadChapterBtn.style.display = 'inline-block';
+    }
+
     // ============ FUNCIONES HELPER ============
     // Estas funciones realizan toda la lógica del sistema:
     // - Gestión de usuarios en localStorage
@@ -188,10 +268,117 @@ document.addEventListener('DOMContentLoaded', function() {
     function initializeUsers() {
         if (!localStorage.getItem('users')) {
             const defaultUsers = {
-                'apa': 'apa'
+                'apa': 'apa',
+                'Diana': 'apa',
+                'Valentina': 'apa',
+                'Igor': 'apa',
+                'Raul': 'apa',
+                'Situ': 'apa',
+                'Mario': 'apa',
+                'Teresa': 'apa',
+                'Antonio': 'apa',
+                'Meli': 'apa',
+                'Isidora': 'apa',
+                'Joana': 'apa'
             };
             localStorage.setItem('users', JSON.stringify(defaultUsers));
         }
+    }
+
+    function openDB() {
+        return new Promise(function(resolve, reject) {
+            if (db) { resolve(db); return; }
+            var request = indexedDB.open('CrunchyrollVideos', 1);
+            request.onupgradeneeded = function(e) {
+                var d = e.target.result;
+                if (!d.objectStoreNames.contains('videos')) {
+                    d.createObjectStore('videos', { keyPath: 'id' });
+                }
+            };
+            request.onsuccess = function(e) {
+                db = e.target.result;
+                resolve(db);
+            };
+            request.onerror = function() { reject(request.error); };
+        });
+    }
+
+    function saveVideoToDB(file, chapterId) {
+        return openDB().then(function(database) {
+            return new Promise(function(resolve, reject) {
+                var reader = new FileReader();
+                reader.onload = function(e) {
+                    var tx = database.transaction('videos', 'readwrite');
+                    tx.objectStore('videos').put({ id: chapterId, data: e.target.result });
+                    tx.oncomplete = function() { resolve(); };
+                    tx.onerror = function() { reject(tx.error); };
+                };
+                reader.onerror = function() { reject(reader.error); };
+                reader.readAsDataURL(file);
+            });
+        });
+    }
+
+    function getVideoFromDB(chapterId) {
+        return openDB().then(function(database) {
+            return new Promise(function(resolve, reject) {
+                var tx = database.transaction('videos', 'readonly');
+                var req = tx.objectStore('videos').get(chapterId);
+                req.onsuccess = function() { resolve(req.result ? req.result.data : null); };
+                req.onerror = function() { reject(req.error); };
+            });
+        });
+    }
+
+    function initializeChapters() {
+        if (!localStorage.getItem('chapters')) {
+            localStorage.setItem('chapters', JSON.stringify({}));
+        }
+    }
+
+    function renderChapters(animeTitle) {
+        var chapters = JSON.parse(localStorage.getItem('chapters')) || {};
+        var animeChapters = chapters[animeTitle] || [];
+
+        if (animeChapters.length === 0) {
+            chaptersList.innerHTML = '<p class="no-chapters">No hay capítulos subidos aún.</p>';
+            return;
+        }
+
+        chaptersList.innerHTML = animeChapters.map(function(ch, index) {
+            var hasVideo = ch.videoId ? 'data-videoid="' + ch.videoId + '"' : '';
+            var playBtn = ch.videoId
+                ? '<button class="play-chapter-btn" ' + hasVideo + ' title="Reproducir video">▶</button>'
+                : '';
+            return '<div class="chapter-item">' +
+                '<div class="chapter-info">' +
+                    '<span class="chapter-name">' + ch.title + '</span>' +
+                    '<span class="chapter-meta">Subido por <strong>' + ch.uploadedBy + '</strong> el ' + ch.date + '</span>' +
+                '</div>' +
+                '<div class="chapter-actions">' + playBtn + '</div>' +
+            '</div>';
+        }).join('');
+
+        chaptersList.querySelectorAll('.play-chapter-btn').forEach(function(btn) {
+            btn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                var videoId = btn.dataset.videoid;
+                if (videoId) {
+                    playChapterVideo(videoId);
+                }
+            });
+        });
+    }
+
+    function playChapterVideo(videoId) {
+        getVideoFromDB(videoId).then(function(dataUrl) {
+            if (dataUrl) {
+                modalVideo.src = dataUrl;
+                modalVideo.muted = false;
+                modalVideo.load();
+                modalVideo.play();
+            }
+        });
     }
 
     /**
@@ -432,6 +619,11 @@ document.addEventListener('DOMContentLoaded', function() {
         animeModal.classList.add('modal-open');
         animeModal.setAttribute('aria-hidden', 'false');
         document.body.classList.add('modal-is-open');
+
+        uploadForm.style.display = 'none';
+        uploadChapterBtn.style.display = 'inline-block';
+        chapterTitleInput.value = '';
+        renderChapters(animeTitle);
 
         requestAnimationFrame(() => {
             animeModal.classList.add('modal-visible');

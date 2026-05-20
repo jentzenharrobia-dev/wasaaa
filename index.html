@@ -1,39 +1,86 @@
 <!DOCTYPE html>
+<!-- ============================================================
+    DOCUMENTO: index.html
+    PROYECTO:  Clon de Crunchyroll (proyecto de práctica)
+    DESCRIPCIÓN: Página principal de un servicio de streaming
+                 de anime con sistema de login, catálogo de series
+                 y ventana modal de información.
+    ============================================================ -->
+
 <html lang="es">
 <head>
+    <!-- === META DATOS === -->
+    <!-- charset="UTF-8"  ->  define la codificación de caracteres -->
+    <!-- viewport         ->  hace que la página sea responsive en móviles -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Título que aparece en la pestaña del navegador -->
     <title>Crunchyroll trucho</title>
+
+    <!-- Vinculación con la hoja de estilos CSS externa -->
     <link rel="stylesheet" href="CSS/crunchyroll.css">
 </head>
 <body>
-    <!-- LOGIN SCREEN
+
+    <!-- ============================================================
+         SECCIÓN 1: PANTALLA DE LOGIN / REGISTRO
+         ============================================================
+         Es lo primero que ve el usuario al cargar la página.
+         El JavaScript (crunchyroll.js) controla qué formulario
+         se muestra (login o registro) y valida los datos.
+         Por defecto, se puede iniciar con:  apa / apa
+    -->
     <div id="login-screen" class="login-container">
-        LOGIN FORM
+
+        <!-- ---- FORMULARIO DE INICIO DE SESIÓN ---- -->
         <div class="login-form" id="login-form">
             <h2>Iniciar Sesión</h2>
-            <input type="text" id="username" placeholder="Usuario" required>
+            <input type="text"     id="username" placeholder="Usuario" required>
             <input type="password" id="password" placeholder="Contraseña" required>
             <button id="login-btn">Iniciar Sesión</button>
-            <p id="error-message" class="error-message" style="display: none;">Usuario o contraseña incorrecta</p>
-            <p class="toggle-form">¿No tienes cuenta? <button id="go-to-register-btn" class="link-btn">Registrarse</button></p>
+
+            <!-- Mensaje de error (oculto por defecto) -->
+            <p id="error-message" class="error-message" style="display: none;">
+                Usuario o contraseña incorrecta
+            </p>
+
+            <!-- Enlace que lleva al formulario de registro -->
+            <p class="toggle-form">
+                ¿No tienes cuenta?
+                <button id="go-to-register-btn" class="link-btn">Registrarse</button>
+            </p>
         </div>
 
-        REGISTER FORM
+        <!-- ---- FORMULARIO DE REGISTRO ---- -->
         <div class="register-form" id="register-form" style="display: none;">
             <h2>Crear Cuenta</h2>
-            <input type="text" id="new-username" placeholder="Nuevo Usuario" required>
+            <input type="text"     id="new-username" placeholder="Nuevo Usuario" required>
             <input type="password" id="new-password" placeholder="Nueva Contraseña" required>
             <input type="password" id="new-password-confirm" placeholder="Confirmar Contraseña" required>
             <button id="register-btn">Crear Cuenta</button>
+
+            <!-- Mensaje de error del registro (oculto por defecto) -->
             <p id="register-error-message" class="error-message" style="display: none;"></p>
-            <p class="toggle-form">¿Ya tienes cuenta? <button id="go-to-login-btn" class="link-btn">Iniciar Sesión</button></p>
+
+            <!-- Enlace que vuelve al formulario de login -->
+            <p class="toggle-form">
+                ¿Ya tienes cuenta?
+                <button id="go-to-login-btn" class="link-btn">Iniciar Sesión</button>
+            </p>
         </div>
     </div>
-    -->
 
-    <!---HEADER-->
+    <!-- ============================================================
+         SECCIÓN 2: HEADER (BARRA DE NAVEGACIÓN)
+         ============================================================
+         Barra fija en la parte superior. Contiene el logo, los
+         enlaces de navegación y las acciones del usuario (búsqueda,
+         guardados, suscripción premium y avatar).
+         Se oculta mientras el login está visible.
+    -->
     <header>
+        <!-- Lado izquierdo: logo + menú de navegación -->
         <div class="header-left">
             <a href="" class="logo-link"><div class="logo">Crunchyroll</div></a>
             <nav class="nav-links">
@@ -47,6 +94,7 @@
             </nav>
         </div>
 
+        <!-- Lado derecho: acciones del usuario -->
         <div class="header-right">
             <a href=""><div class="header-action search-action">Buscar</div></a>
             <a href=""><div class="header-action bookmark-action">Guardar</div></a>
@@ -55,8 +103,27 @@
         </div>
     </header>
     
-    <!---MAIN-->
+    <!-- ============================================================
+         SECCIÓN 3: CONTENIDO PRINCIPAL (MAIN)
+         ============================================================
+         Contiene el banner principal del anime destacado y la
+         cuadrícula de series recomendadas. El header y el main
+         se ocultan inicialmente hasta que el usuario inicia
+         sesión (controlado por JavaScript).
+    -->
     <main>
+
+        <!-- ---- 3.1 HERO / BANNER PRINCIPAL ---- -->
+        <!--
+             Sección destacada del anime principal (Tensura).
+             El fondo se aplica desde CSS con un gradiente y la
+             imagen de fondo tensura-hero.png. Contiene:
+             - .hero-kicker : etiqueta "Nuevo episodio disponible"
+             - img.Titulo   : portada del anime
+             - h1           : descripción breve
+             - .hero-actions: botones "Ver ahora" y "Más información"
+               que activan la ventana modal (controlado por JS).
+        -->
         <div class="img-principal">
             <p class="hero-kicker">Nuevo episodio disponible</p>
             <img src="imagenes/Cartelera/banner-tensura.webp" class="Titulo" alt="Tensura">
@@ -66,7 +133,20 @@
                 <button class="details-btn">Más información</button>
             </div>
         </div>
-    
+
+        <!-- ---- 3.2 GRID DE SERIES RECOMENDADAS ---- -->
+        <!--
+             Cada serie se representa con un div.banner-module
+             que contiene atributos data-* con la información:
+               data-titulo          -> nombre del anime
+               data-fecha-de-creacion -> fecha de estreno
+               data-descripcion     -> sinopsis
+               data-genero          -> género(s)
+               data-clasificacion   -> demografía (Shonen/Seinen)
+               data-capitulos       -> cantidad de episodios
+             Estos datos los usa el JavaScript para llenar la
+             ventana modal cuando el usuario hace clic en un banner.
+        -->
         <section class="banners-section">
             <div class="section-heading">
                 <div>
@@ -304,21 +384,40 @@
         </section>
     </main>
 
+    <!-- ============================================================
+         SECCIÓN 4: VENTANA MODAL (DETALLE DEL ANIME)
+         ============================================================
+         Popup que se abre al hacer clic en un banner o en los
+         botones del héroe. Muestra:
+         - Video de presentación del anime
+         - Título, descripción y datos (fecha, género, etc.)
+         Los datos se llenan dinámicamente desde los atributos
+         data-* del banner clicado (controlado por JS).
+         Se cierra con el botón X, haciendo clic fuera o con ESC.
+    -->
     <div class="anime-modal" id="anime-modal" aria-hidden="true">
         <div class="anime-modal-content">
+
+            <!-- Botón para cerrar la modal -->
             <button class="modal-close-btn" id="modal-close-btn" aria-label="Cerrar ventana">x</button>
 
+            <!-- Lado izquierdo: reproductor de video -->
             <div class="modal-video-box">
                 <video id="modal-video" autoplay muted loop playsinline>
+                    <!-- Video por defecto (se reemplaza según el anime) -->
                     <source src="imagenes/Videos/frieren-trailer.mp4" type="video/mp4">
                 </video>
             </div>
 
+            <!-- Lado derecho: información del anime -->
             <div class="modal-info-box">
                 <p class="modal-label">Anime seleccionado</p>
+                <!-- Título -> se llena desde JS -->
                 <h2 id="modal-title"></h2>
+                <!-- Descripción -> se llena desde JS -->
                 <p id="modal-description" class="modal-description"></p>
 
+                <!-- Datos estructurados del anime -->
                 <div class="modal-data-list">
                     <div>
                         <span>Fecha de creacion</span>
@@ -337,10 +436,41 @@
                         <strong id="modal-episodes"></strong>
                     </div>
                 </div>
+
+                <div class="modal-chapters-section">
+                    <h3 class="chapters-title">Capítulos subidos</h3>
+                    <div class="chapters-list" id="chapters-list">
+                        <p class="no-chapters">No hay capítulos subidos aún.</p>
+                    </div>
+                    <button class="upload-chapter-btn" id="upload-chapter-btn">+ Subir capítulo</button>
+                    <div class="upload-form" id="upload-form" style="display: none;">
+                        <input type="text" id="chapter-title-input" placeholder="Ej: Episodio 13" required>
+                        <label class="chapter-video-label">
+                            <span>Seleccionar video</span>
+                            <input type="file" id="chapter-video-input" accept="video/*">
+                        </label>
+                        <div class="upload-form-actions">
+                            <button class="save-chapter-btn" id="save-chapter-btn">Guardar</button>
+                            <button class="cancel-chapter-btn" id="cancel-chapter-btn">Cancelar</button>
+                        </div>
+                    </div>
+                </div>
             </div>
+
         </div>
     </div>
 
+    <!-- ============================================================
+         SECCIÓN 5: SCRIPT (JAVASCRIPT)
+         ============================================================
+         Carga el archivo crunchyroll.js que contiene:
+         - Sistema de login y registro (con localStorage)
+         - Lógica de la ventana modal (abrir/cerrar)
+         - Animaciones de transición entre login y contenido
+         - Manejo de eventos (clics, teclado, video)
+         Se coloca al final del <body> para que los elementos
+         HTML ya estén cargados cuando el JS se ejecute.
+    -->
     <script src="Javascript/crunchyroll.js"></script>
 </body>
 </html>
